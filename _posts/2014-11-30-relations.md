@@ -2,8 +2,7 @@
 layout: post
 title: Relations & Virtual Attribute
 ---
-
-![sort](/images/sort.png)
+![sort](/img/sort.png)
 
 ตัวอย่างง่ายๆ ในการสร้าง relation กับ model ตัวอย่างนี้ผมจำลองข้อมูลไว้ 2 ตารางคือ Patient & Hospital 
 โดยที่ตาราง patient จะเก็บรหัสของโรงพยาบาลไว้ คือ hospital_code
@@ -31,37 +30,28 @@ Hospital                  |
 ```php
 <?php
 class Patient extends \yii\db\ActiveRecord{
-
 	//.....
-
 	// relation
 	public  function getHospital(){
         return @$this->hasOne(Hospital::className(), ['code' => 'hospital_code']);
     }
-
     // virtual attribute hospitalName
     public function getHospitalName(){
         return @$this->hospital->name;
     }
-
     // virtual attribute fullName 
     public function getFullname(){
-
         return $this->title .$this->name. " " .$this->surname;
     }
-
     public function attributeLabels()
     {
         return [
         	//..............ฟิวด์อื่นๆ
-
            'fullName' => Yii::t('app', 'ชื่อ-นามสกุล'),
 	       'hospitalName' => Yii::t('app', 'โรงพยาบาล'),
-
             //..............
         ];
     }
-
 ```
 ## การเรียกใช้ใน Gridview 
 
@@ -94,37 +84,30 @@ class Patient extends \yii\db\ActiveRecord{
 <?php
 class PatientSearch extends Patient {
 
-	///.................
-    public function search($params)
-    {
-        $query = Patient::find();
-
-        $query->joinWith(['hospital']);
-
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-        ]);
-
-        // สำหรับ coluumn hospitalName
-        $dataProvider->sort->attributes['hospitalName'] = [
-            'asc' => ['lib_hospital.name' => SORT_ASC],
-            'desc' => ['lib_hospital.name' => SORT_DESC],
-        ];
-
-		// สำหรับ coluumn fullName
-         $dataProvider->sort->attributes['fullName'] = [
-            'asc' => ['name' => SORT_ASC, 'surname' => SORT_ASC],
-            'desc' => ['name' => SORT_DESC, 'surname' => SORT_DESC],
-            'label' => 'ชื่อ - นามสกุล',
-            'default' => SORT_ASC
-        ];
-
-        //................
-     }
+public function search($params)
+{
+    $query = Patient::find();
+    $query->joinWith(['hospital']);
+    $dataProvider = new ActiveDataProvider([
+        'query' => $query,
+    ]);
+    // สำหรับ coluumn hospitalName
+    $dataProvider->sort->attributes['hospitalName'] = [
+        'asc' => ['lib_hospital.name' => SORT_ASC],
+        'desc' => ['lib_hospital.name' => SORT_DESC],
+    ];
+	// สำหรับ coluumn fullName
+     $dataProvider->sort->attributes['fullName'] = [
+        'asc' => ['name' => SORT_ASC, 'surname' => SORT_ASC],
+        'desc' => ['name' => SORT_DESC, 'surname' => SORT_DESC],
+        'label' => 'ชื่อ - นามสกุล',
+        'default' => SORT_ASC
+    ];
+    //................
+ }
 
 ```
 หลังจากนั้นเราจะทำการคลิก sort ที่หัวคอลัมน์ได้เลย สะดวกมากๆ ^^
-
 
 # การค้นหา
 
@@ -134,38 +117,32 @@ class PatientSearch extends Patient {
 
 ```php
 <?php
-		class PatientSearch extends Patient
-		{
-
-		    public $hospitalName;
-		    public $fullName;	
-
-			public function rules()
-		    {
-		        return [
-		            // ..........
-		            [hospitalName','fullName'], 'safe'],
-		        ];
-		    }
-
-		    public function search($params)
-		    {
-
-
-
-		       //..........
-
-	            $query->orFilterWhere(['like', 'patient.name', $this->fullName])
-	                  ->orFilterWhere(['like', 'patient.surname', $this->fullName])
-	                  ->orFilterWhere(['like', 'lib_hospital.name', $this->hospitalName]);
-		    }
-
-		    //.........
+class PatientSearch extends Patient
+{
+    public $hospitalName;
+    public $fullName;	
+	public function rules()
+    {
+        return [
+            // ..........
+            ['hospitalName','fullName'], 'safe'],
+        ];
     }
+    public function search($params)
+    {
+       //..........
+        $query->orFilterWhere(['like', 'patient.name', $this->fullName])
+              ->orFilterWhere(['like', 'patient.surname', $this->fullName])
+              ->orFilterWhere(['like', 'lib_hospital.name', $this->hospitalName]);
+    }
+    //.........
+}
+?>
 ```
 
 ขอให้สนุกกับการเรียนรู้ครับ ....
-อ่านต่อเพิ่มเติมได้ที่นี่ครับ
+อ่านต่อเพิ่มเติมได้ที่นี่
+
 - [Yii 2.0: Filter & Sort by calculated/related fields in GridView Yii 2.0 ](http://www.yiiframework.com/wiki/621/filter-sort-by-calculated-related-fields-in-gridview-yii-2-0/)
 - [Yii 2.0: Displaying, Sorting and Filtering Model Relations on a GridView](http://www.yiiframework.com/wiki/653/displaying-sorting-and-filtering-model-relations-on-a-gridview/)
 

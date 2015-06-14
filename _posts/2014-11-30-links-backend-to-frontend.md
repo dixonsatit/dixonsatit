@@ -3,11 +3,13 @@ layout: post
 title: สร้างลิ้งเชื่อมกันระหว่าง frontend & backend
 ---
 
-เราสามารถสร้าง link เชื่อมกันระหว่าง backend & frontend โดยใช้ `urlManager` และตังชื่อใหม่ให้มันเป็น `urlManagerBackend`
+ในกรณที่เราสร้าง aplication แบบ advance ตัวโปรเจคจะถูกแบ่งออกเป็น 2 ส่วนคือ backend, frontend ซึ่งเราสามารถสร้าง link เชื่อมกันระหว่าง backend & frontend โดยใช้ `urlManager`
 
 ## Frontend ลิ้งไปที่ Backend
 แก้ไปไฟล์ frontend/config/main.php  เพิ่ม `urlManagerBackend` เข้าไป
+
 ```php
+<?php 
 'component'=>[
 	...........
 	 'urlManager' => [
@@ -24,22 +26,25 @@ title: สร้างลิ้งเชื่อมกันระหว่า�
      ],
     ...........
  ]
+ ?>
 ```
 
 ### เรียกใช้งาน
 ```php
-
+<?php
 echo Yii::$app->urlManagerBackend->createAbsoluteUrl(['site/index','id'=>4]);
 echo Yii::$app->urlManagerBackend->createUrl(['site/index','id'=>4]);
 echo Yii::$app->urlManagerBackend->getBaseUrl();
 echo Yii::$app->urlManagerBackend->getHostInfo();
 echo Yii::$app->urlManagerBackend->getScriptUrl();
-
+?>
 ```
 
 ## Backend  ลิ้งไปที่ Frontend
 แก้ไปไฟล์ backend/config/main.php  เพิ่ม `urlManagerFrontend` เข้าไป
+
 ```php
+<?php
 'component'=>[
 	...........
 	 'urlManager' => [
@@ -56,13 +61,17 @@ echo Yii::$app->urlManagerBackend->getScriptUrl();
      ],
     ...........
  ]
+ ?>
 ```
 
 ### เรียกใช้งาน
-```php
 
+```php
+<?php
 echo Yii::$app->urlManagerFrontend->createAbsoluteUrl(['site/index','id'=>4]);
 echo Yii::$app->urlManagerFrontend->createUrl(['site/index','id'=>4]);
 echo Yii::$app->urlManagerFrontend->getBaseUrl();
 echo Yii::$app->urlManagerFrontend->getHostInfo();
 echo Yii::$app->urlManagerFrontend->getScriptUrl();
+?>
+```

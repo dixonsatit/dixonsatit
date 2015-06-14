@@ -23,22 +23,30 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - การสร้าง ItemAlias ใน model เพื่อใช้กับ DropdownList,CheckBoxList, RadioList
 - การใช้งาน CheckBoxList บันทึกข้อมูลโดยใช้ฟิวด์เดียว(คั่นด้วย',')
 - การอัพโหลดไฟล์
+- การใช้งาน DetailView
+- การใช้งาน GridView
+- การใช้งาน Boostrap ActiveForm
 
 
 # Tutorial
 - การใช้งาน FlashMessage
 - [เเปลี่ยน ActionColumn เดิมๆ เป็นสไตล์ ButtonGroup](/2014/11/30/action-column.html)
 - สร้างลิ้งเชื่อมกันระหว่าง frontend & backend
+- การสร้างและใช้งาน Assets
 - การสร้าง Theme
-- [สร้างระบบ login อย่างง่าย]()
+- สร้างระบบ login อย่างง่าย
+- [เปิดการใช้งาน Pretty urls (mod_rewrite)](/2014/11/30/modrewrite.html)
+- [Relations & Virtual Attribute](/2014/11/30/relations.html)
+- [สร้างลิ้งเชื่อมกันระหว่าง frontend & backend](/2014/11/30/links-backend-to-frontend.html)
+
 
 
 # Model
-- รวมคำสั่งที่ใช้งานบ่อยของ model
+- [รวมคำสั่งที่ใช้งานบ่อยของ model](/2014/11/30/query-model.html)
 - การใช้งาน Validation แบบต่างๆ
 - Relation
 - Virtual Attribute
-- การใช้งาน TimestampBehaveor
+- [การใช้งาน TimestempBehavior ใน model เพื่ออัพเดทข้อมูลวันที่](/2015/06/14/model-behaviors.html)
 
 # Extension
 - Eport ข้อมูล pdf,xls,html,text,csv,json ด้วย kartik-v/yii2-grid

@@ -12,7 +12,7 @@ theme:
 
   # Header and footer text
   header_text: >
-     <p>บักทึกความทรงจำและเรื่องราวที่อยากแบ่งปัน. </p>
+     <p> สุขใจที่ได้แบ่งปัน. </p>
   header_text_feature_image:
   footer_text: >
    Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>

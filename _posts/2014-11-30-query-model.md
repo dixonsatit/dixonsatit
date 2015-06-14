@@ -7,6 +7,7 @@ title: รวมคำสั่ง Query ใน Model ที่ใช้งา�
 เป็นคำสั่งค้นข้อมูลและส่งค่ากลับมาทีละแถว โดยใช้ primary key โดยสามารถใส่ค่าเข้าไปที่ parameter ของ `find()` ได้เลย หากค้าแล้วไม่เจอจะคืนค่าเป็น `null` คล้ายกับ `findByPk()` ใน yii1
 
 ตัวอย่างการใช้งาน
+
 ```php
 $model = User::find(45);
 if($model){
@@ -20,6 +21,7 @@ if($model){
 > ในการใช้งานจริงๆ เราสามารถใช้งานร่วมกับ method อื่นได้ เช่น where(),order() การใช้งานดูในตัวอย่างถัดๆ ไป
 
 ตัวอย่างการใช้งาน
+
 ```php
 $model = User::find()->all();
 
@@ -29,6 +31,7 @@ $model = User::find()->all();
 > ในการใช้งานจริงๆ เราสามารถใช้งานร่วมกับ method อื่นได้ เช่น where(),order() การใช้งานดูในตัวอย่างถัดๆ ไป
 
 ตัวอย่างการใช้งาน
+
 ```php
 $model = User::find()->one();
 
@@ -39,6 +42,7 @@ $model = User::find()->one();
 
 ตัวอย่างการใช้งาน where() แบบต่างๆ
 ### Sample 1:
+
 ```php
 $userid=1;
 $model = User::find()
@@ -46,12 +50,14 @@ $model = User::find()
 	->one();
 ```
 ### Sample 2:
+
 ```php
 $model = User::find()
 	->where(['reg_date' => $date, 'status' => 1])
 	->one();
 ```
 ### Sample 3:
+
 ```php
 $model = User::find()
 	->where("reg_date > '2014-01-01' and status=1")
@@ -59,6 +65,7 @@ $model = User::find()
 ```
 ### Sample 4:
 เป็นการเพิ่มหลายๆ เงื่อนไขต่อกันสามารถระบุได้ว่าเงื่อนไขต่อไปเป็น and,หรือ or
+
 ```php
 $model = User::find()
 	->where('userid > :userid', [':userid' => $userid])
@@ -68,6 +75,7 @@ $model = User::find()
 ```
 
 หากดูในรูปแบบ sql จะได้แบบนี้
+
 ```sql
 SELECT * FROM `tbl_user` WHERE ((userid > 1) OR (primary_user = 1)) AND (status = 1)
 ```
@@ -75,6 +83,7 @@ SELECT * FROM `tbl_user` WHERE ((userid > 1) OR (primary_user = 1)) AND (status 
 ## orderBy()
 
 ### Sample 1:
+
 ```php
 $model = User::find()
     ->where(['status' => 1])
@@ -82,6 +91,7 @@ $model = User::find()
     ->all();
 ```
 ### Sample 2:
+
 ```php
 $model = User::find()
 	->where(['status' => 0])
@@ -89,6 +99,7 @@ $model = User::find()
 	->one();
 ```
 ### Sample 3:
+
 ```php
 	$model = User::find()
 	->orderBy([
@@ -98,7 +109,9 @@ $model = User::find()
 	->limit(10)
 	->all();
 ```
+
 ถ้าดูในรูปแบบ `sql` จะได้แบบนี้
+
 ```sql
 SELECT * FROM `tbl_user` ORDER BY `usertype`, `username` DESC LIMIT 10
 ```
@@ -140,12 +153,14 @@ $model = User::find()
 ## limit()
 
 ### Sample 1:
+
 ```php
 $model = User::find()
 ->limit(10)
 ->all();
 ```
 ### Sample 2:
+
 ```php
 $model = User::find()
 ->where('userid > 1 and isactive=1')
@@ -161,13 +176,16 @@ $model = User::find()
 		->offset(10)
 		->all();
 ```
+
 ดูในรูปแบบ `sql` จะได้แบบนี้
+
 ```sql
 SELECT * FROM `tbl_user` LIMIT 5 OFFSET 10
 ```
 
 ## Limit With Pagination()
 เป็นการใช้งาน model ร่วมกับ pagination สามารถตั้งค่า `defaultPateSize` ได้
+
 ```php
 $query = Country::find();
 $pagination = new Pagination([
@@ -186,6 +204,7 @@ $countries = $query->orderBy('name')
 เป็นการใช้งานคำสั่ง like ส่วนใหญ่เราก็ใช้ในกรณีค้นหาข้อมูล สามารถระบุ % หน้า % หลังได้
 
 ### Sqmple 1:
+
 ```php
 $model = User::find()
 		->where(['LIKE', 'username', 'admin'])
@@ -197,17 +216,21 @@ $model = User::find()
 		->all();
 ```
 หากดูในรูปแบบ `sql` จะได้แบบนี้
+
 ```sql
 SELECT * FROM `tbl_user` WHERE `username` LIKE '%admin%'
 ```
 
 ### Sqmple 2:
+
 ```php
 $model = User::find()
 		->where(['NOT LIKE', 'username', 'admin'])
 		->all();
 ```
+
 หากดูในรูปแบบ `sql` จะได้แบบนี้
+
 ```sql
 SELECT * FROM `tbl_user` WHERE `username` NOT LIKE '%admin%'
 ```
@@ -216,6 +239,7 @@ SELECT * FROM `tbl_user` WHERE `username` NOT LIKE '%admin%'
 In เราสามารถระบบค่าเป็น array ได้เลย
 
 ### Sqmple 1:
+
 ```php
 $model = User::find()
 		->where([
@@ -223,17 +247,22 @@ $model = User::find()
 			])
 		->all();
 ```
+
 ### Sqmple 2:
+
 ```php
 $model = User::find()
 		->where(['IN', 'userid', [1001,1002,1003,1004,1005]])
 		->all();
 ```
+
 หากดูในรูปแบบ `sql` จะได้แบบนี้
+
 ```sql
 SELECT * FROM `tbl_user` WHERE `userid` IN (1001, 1002, 1003, 1004, 1005)
 ```
 ### Sqmple 3:
+
 ```php
 $model = User::find()
 		->where(['NOT IN', 'userid', [1001,1002,1003,1004,1005]])
@@ -241,6 +270,7 @@ $model = User::find()
 
 ```
 หากดูในรูปแบบ `sql` จะได้แบบนี้
+
 ```sql
 SELECT * FROM `tbl_user` WHERE `userid` NOT IN (1001, 1002, 1003, 1004, 1005)
 ```
@@ -255,17 +285,20 @@ $model = User::find()
 		->all();
 ```
 หากดูในรูปแบบ `sql` จะได้แบบนี้
+
 ```sql
 SELECT `username` FROM `tbl_user` WHERE userid between 1 and 5
 ```
 
 ## groupBy()
+
 ```php
 $model = User::find()
 		->groupBy('usertype')
 		->all();
 ```
 หากดูในรูปแบบ `sql` จะได้แบบนี้
+
 ```sql
 SELECT * FROM `tbl_user` GROUP BY `usertype`
 ```
@@ -288,6 +321,7 @@ SELECT * FROM `tbl_user` GROUP BY `usertypee` HAVING states >1
 เป็นการแทนค่าตัวแปรในเงือนไข where
 
 ### Sqmple 1:
+
 ```php
 $usertype=1;
 $model = User::find()
@@ -296,6 +330,7 @@ $model = User::find()
 	->one();
 ```
 ### Sqmple 2:
+
 ```php
 $usertype=1;
 $status=0;
@@ -321,7 +356,9 @@ $model = User::find()
 			])
 		->all();
 ```
+
 ดูในรูปแบบ `sql` จะได้แบบนี้
+
 ```sql
 SELECT * FROM `tbl_user` WHERE (`type`=26) AND (`status`=1) AND (`userid` IN (1001, 1002, 1003, 1004, 1005))
 
@@ -334,6 +371,7 @@ SELECT * FROM `tbl_user` WHERE (`type`=26) AND (`status`=1) AND (`userid` IN (10
 ตามตัวอย่างด้านล่าง เป็นการสร้าง `scope` ชื่อ `olderThen` มีการรับค่า parameter 1 ตัว ชื่อ `$age`และมีการกำหนดค่า default ให้เท่ากับ 5 ในกรณีที่เรียกใช้งานแล้วไม่ได้ใส่ค่ามาด้วย `` paramerter มาด้วย `$age` จะเท่ากับ 5
 
 ### Sqmple 1:
+
 ```php
 class User extends \yii\db\ActiveRecord
 {
