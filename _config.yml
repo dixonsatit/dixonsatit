@@ -1,33 +1,31 @@
 # SITE CONFIGURATION
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://example.com" # the base hostname & protocol for your site
+url: "http://dixonsatit.github.io" # the base hostname & protocol for your site
 
 # THEME-SPECIFIC CONFIGURATION
 theme:
   # Meta
   title: DixonSatit
   avatar: avatar.png
-  gravatar: # Email MD5 hash
+  gravatar: "7037e0cdf96cd3d4ad39b6c32ca29bd7" # Email MD5 hash
   description: "A website with blog posts and pages" # used by search engines
 
   # Header and footer text
   header_text: >
-     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-     <p>Remove all header text in <code>_config.yml</code> to disable this feature.</p>
+     <p>บักทึกความทรงจำและเรื่องราวที่อยากแบ่งปัน. </p>
   header_text_feature_image:
   footer_text: >
    Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
 
   # Icons
   rss: false
-  email_address: # Full email address, e.g. "sam@example.com"
+  email_address: "dixonsatit@gmail.com" # Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
   dribbble:
-  facebook:
+  facebook: "satit.seethaphon"
   flickr:
-  github: "rohanchandra/type-theme"
+  github: "dixonsatit"
   google_plus:
   instagram:
   linkedin:  # Full URL
@@ -36,13 +34,13 @@ theme:
   soundcloud:
   stack_exchange:  # Full URL
   steam:
-  tumblr:
-  twitter: "twitter"
+  tumblr: 
+  twitter: "dixonsatit"
   wordpress:
-  youtube:
+  youtube: 
 
   # Scripts
-  google_analytics: # Tracking ID, e.g. "UA-000000-01"
+  google_analytics: "UA-63817549-1" # Tracking ID, e.g. "UA-000000-01"
   disqus_shortname:
   katex: true # Enable if using math markup
 
@@ -66,8 +64,19 @@ paginate: 5
 paginate_path: "blog/page:num"
 
 # BUILD SETTINGS
-markdown: kramdown
+#markdown: kramdown
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript","tables", "with_toc_data"]
+
+kramdown:
+  input: GFM
+  use_coderay: true
+  coderay:
+    coderay_line_numbers: true
+    coderay_css: class
 highlighter: pygments
+
 sass:
   sass_dir: _sass
   style: :compressed
