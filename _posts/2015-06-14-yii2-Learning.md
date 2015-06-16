@@ -26,6 +26,13 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - การใช้งาน DetailView
 - การใช้งาน GridView
 - การใช้งาน Boostrap ActiveForm
+- เปิดใช้งาน Ajax From Validateion
+
+# Pjax
+- สร้างฟอร์ม submit ajax
+- สร้าง Toggle Button Ajax
+- สร้างฟอร์มค้นหา Ajax
+
 
 
 # Tutorial
@@ -38,7 +45,10 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [เปิดการใช้งาน Pretty urls (mod_rewrite)](/2014/11/30/modrewrite.html)
 - [Relations & Virtual Attribute](/2014/11/30/relations.html)
 - [สร้างลิ้งเชื่อมกันระหว่าง frontend & backend](/2014/11/30/links-backend-to-frontend.html)
-
+- Register css file, js file
+- การใช้งาน Data Formatter
+- การใช้งาน mailer stmp google
+- การใช้งาน mailer stmp mandrillapp 
 
 
 # Model
@@ -47,10 +57,12 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - Relation
 - Virtual Attribute
 - [การใช้งาน TimestempBehavior ใน model เพื่ออัพเดทข้อมูลวันที่](/2015/06/14/model-behaviors.html)
+- [การใช้งาน SluggableBehavior ในการแปลงคำไทยเป็นภาษาทังกฤษเพื่อใช้กับ url ]()
 
 # Extension
 - Eport ข้อมูล pdf,xls,html,text,csv,json ด้วย kartik-v/yii2-grid
 - การสร้าง chart ด้วย HeightChart
+- ติดตั้ง Yii-User
 
 
 

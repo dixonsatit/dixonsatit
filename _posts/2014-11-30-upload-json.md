@@ -3,7 +3,7 @@ layout: post
 title: สร้างฟอร์ม Upload File และเก็บข้อมูลเป็น json
 ---
 
-![upload file](/images/upload-file-ajax.png)
+![upload file](/img/upload-file-ajax.png)
 
 เราจะทำการสร้างฟอร์มอัพโหลดข้อมูลและเก็บข้อมูลชื่อไฟล์ให้อยู่ในรูปแบบ json เพื่อประหยัดฟิวด์ และเราจะใช้ widget [fileinput](http://demos.krajee.com/widgets#fileinput) เป็น Widget ของ krajee เจ้าเก่า ซึ่งรวมอยู่ในแพ็คเก็จ [Yii2 Widget](http://demos.krajee.com/widgets) อยู่แล้ว ติดตั้งทีเดียวได้ครบเลย ^^
 
@@ -18,10 +18,12 @@ title: สร้างฟอร์ม Upload File และเก็บข้อ
 ## การติดตั้ง Widget
 
 รันคำสั่งเพื่อทำการติดตั้ง
+
 ```
 composer require kartik-v/yii2-widgets "*"
 ```
 หรือเพิ่ม
+
 ```
 "kartik-v/yii2-widgets": "*"
 ```
@@ -37,10 +39,10 @@ composer require kartik-v/yii2-widgets "*"
 เปิดไฟล์ /models/Freelance.php
 
 เพิ่มฟิวด์ `covenant` ที่จะเก็บข้อมูลไฟล์สัญญาจ้าง และ `docs` เก็บไฟล์เอกสารที่เกี่ยวข้องทั้งหมด กำหนด type validate เป็น `file`
+
 ```php
 <?php
 //.......
-
 public function rules()
 {
     return [
@@ -53,9 +55,8 @@ public function rules()
         [['docs'],'file','maxFiles'=>10] //<---
     ];
 }
-
 //.......
-
+?>
 ```
 
 ## Create Form
@@ -69,19 +70,16 @@ public function rules()
 ```
 จากนั้นก็ปรับ layout from ตามใจชอบ [ดูรายละเอียดการปรับ layout form ได้ที่นี่](/tutorial/create-form.md)
 
-![form-upload-layout.](/images/upload-file/form-upload-layout.png)
+![form-upload-layout.](/img/upload-file/form-upload-layout.png)
 
 ```php
 <?php
-
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
 /* @var $this yii\web\View */
 /* @var $model app\models\Freelance */
 /* @var $form yii\widgets\ActiveForm */
 ?>
-
 <div class="freelance-form">
 
     <?php $form = ActiveForm::begin(); ?>
@@ -108,7 +106,7 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
-
+?>
 ```
 
 จากนั้นเราจะทำการเปลี่ยนจาก input เป็น file โดยใช้ [File Input Widget](http://demos.krajee.com/widgets#fileinput) ทำการเรียก File Input Widget เข้ามาก่อน
@@ -123,6 +121,7 @@ use kartik\widgets\FileInput;
 <?= $form->field($model, 'covenant')->textInput(['maxlength' => 100]) ?>
 ```
 และทำการเรียกใช้งาน `FileInput` และกำหนดค่าต่างๆ
+
 ```php
 
 <?= $form->field($model, 'covenant')->widget(FileInput::classname(), [
@@ -177,7 +176,7 @@ use kartik\widgets\FileInput;
 ```
 หลังจากนั้นลองดูฟอร์มที่เราได้ปรับแต่งแล้ว ก็จะได้ฟอร์มอัพโหลดที่ค่อนข้างดูดีทีเดียว ไม่ใช่แค่สวย แต่มันยังทำให้เราใช้งานได้ง่ายขึ้นอีกด้วย แจ่มๆ ^^
 
-![upload](/images/upload-file/add-widget.png)
+![upload](/img/upload-file/add-widget.png)
 
 ## ทดลองการ Validate ไฟล์
 
@@ -185,11 +184,11 @@ use kartik\widgets\FileInput;
 
 ทดลองเลือกไฟล์ที่ไม่ใช่ pdf ก็จะได้ error แบบนี้ และสามารถเลือกได้แค่ไฟล์เดียวเพราะเรากำหนดไว้ที่ `Rules()` ใน model ไว้แล้ว
 
-![upload](/images/upload-file/single-error.png)
+![upload](/img/upload-file/single-error.png)
 
 ถ้าเลือกไฟล์ถูกต้อง ก็จะแสดงแบบนี้ เห้ย! สวยใช้ได้เลย
 
-![upload](/images/upload-file/single-success.png)
+![upload](/img/upload-file/single-success.png)
 
 
 ### ฟิวด์ที่สอง `docs`
@@ -199,15 +198,15 @@ use kartik\widgets\FileInput;
 ลองเลือกหลายๆ ไฟล์
 > ต้องกดปุ่ม Ctl หรือ command ถ้าเป็น mac ค้างไว้แล้วเลือกไฟล์
 
-![upload](/images/upload-file/multiple-success.png)
+![upload](/img/upload-file/multiple-success.png)
 
 ลองเลือกเกินที่กำหนดไว้
 
-![upload](/images/upload-file/multiple-error-max.png)
+![upload](/img/upload-file/multiple-error-max.png)
 
 ลองเลือกนามสกุลไฟล์ที่ไม่ได้ระบุไว้
 
-![upload](/images/upload-file/multiple-error.png)
+![upload](/img/upload-file/multiple-error.png)
 
 
 > จริงๆ แล้ว UploadFile ของเดิมๆ ที่มากับ yii 2 ก็ใช้ได้นะครับเพียงแค่หน้าตาอาจไม่สวย
@@ -218,7 +217,7 @@ use kartik\widgets\FileInput;
 ```
 จะแสดงรายการที่เราได้เลือกไว้ แบบนี้ ! โอ้วพระสงฆ์
 
-![upload](/images/upload-file/show-thumbnail.png)
+![upload](/img/upload-file/show-thumbnail.png)
 
 เสร็จสิ้นในการเตรียมในส่วนของ front end เดี่ยวไปสร้าง controller และ model กัน
 
@@ -267,6 +266,7 @@ use yii\helpers\ArrayHelper;
 สร้าง function
 
 ```php
+<?php
 private function uploadSingleFile($model,$tempFile=null){
         $file = [];
         $json = '';
@@ -286,6 +286,7 @@ private function uploadSingleFile($model,$tempFile=null){
         }
         return $json ;
     }
+    ?>
 ```
 
 ### สร้างฟังก์ชั่นอัพโหลดทีละหลายๆ ไฟล์
@@ -294,7 +295,7 @@ private function uploadSingleFile($model,$tempFile=null){
 และก็จะรับค่า parameter  เหมือนกันคือ $model,$tempFile
 
 ```php
-
+<?php
 private function uploadMultipleFile($model,$tempFile=null){
             $files = [];
             $json = '';
@@ -316,6 +317,7 @@ private function uploadMultipleFile($model,$tempFile=null){
             }
            return $json;
    }
+   ?>
 ```
 
 ### สร้างฟังก์ชันเพื่อสร้างโฟลเดอร์สำหรับเก็บไฟล์
@@ -323,6 +325,7 @@ private function uploadMultipleFile($model,$tempFile=null){
 ฟังชั่นนี้ก็ง่ายๆ เอาไว้สำหรับสร้าง folder ไว้เก็บไฟล์ในแต่ละ id เพื่อให้แยกไฟล์ได้เป็นระเบียบและเพื่อการค้นหาด้วย
 
 ```php
+<?php
 private function CreateDir($folderName){
     if($folderName != NULL){
         $basePath = Freelance::getUploadPath();
@@ -332,7 +335,7 @@ private function CreateDir($folderName){
     }
     return;
 }
-
+?>
 ```
 
 ### เรียกใช้งานตอน Create
@@ -340,6 +343,7 @@ private function CreateDir($folderName){
 เราจะเรียกใช้งานที่ actionCreate เพื่ออัพโหลดไฟล์ โดยของเดิมจะเป็นแบบนี้
 
 ```php
+<?php
 public function actionCreate()
 {
       $model = new Freelance();
@@ -351,11 +355,12 @@ public function actionCreate()
               'model' => $model,
           ]);
       }
-}
+}?>
 ```
 จากนั้นเพิ่มอัพโหลดไฟล์และเรียใช้งาน `CreateDir` เข้าไป ตามด้านล่าง
 
 ```php
+<?php
 public function actionCreate()
 {
     $model = new Freelance();
@@ -378,7 +383,7 @@ public function actionCreate()
     return $this->render('create', [
         'model' => $model,
     ]);
-}
+}?>
 ```
 
 หลักการทำงานของฟังก์ชันคือ
@@ -398,6 +403,7 @@ public function actionCreate()
 ทำการแก้ไขไฟล์ `controller/Freelance.php` actionUpdate ซึ่งจะคล้ายกับ create ต่างกันนิดหน่อยตรงที่ต้องเก็บค่าไฟล์เดิมไว้ก่อน เพื่อใช้ในกรณีไม่ได้มีการอัพโหลดไฟล์
 
 ```php
+<?php
 public function actionUpdate($id)
 {
     $model = $this->findModel($id);
@@ -415,10 +421,12 @@ public function actionUpdate($id)
         'model' => $model,
     ]);
 }
+?>
 ```
 และสร้างฟังก์ชันในการดึงไฟล์มาแสดง thumbnail ในตอนแก้ไขข้อมูลที่ฟอร์ม ที่ตัว widget upload file เพิ่มที่ไฟล์ modeles/Freelance.php
 
 ```php
+<?php
 public function initialPreview($data,$field,$type='file'){
         $initial = [];
         $files = Json::decode($data);
@@ -441,6 +449,7 @@ public function initialPreview($data,$field,$type='file'){
      }
     return $initial;
 }
+?>
 ```
 ทำการแก้ไขไฟล์ views/freelance/_form.php เพิ่มการเรียกใช้งานเพื่อแสดง thumbnail ไฟล์ในตอนแก้ไข
 
@@ -468,13 +477,14 @@ public function initialPreview($data,$field,$type='file'){
 
 เมื่ออัพโหลดไฟล์เสร็จ เราจะได้ข้อมูล json ออกมาแบบนี้
 
-![view-upload](/images/upload-file/view-upload.png)
+![view-upload](/img/upload-file/view-upload.png)
 
 โดยข้อมูลจะเก็บเป็น key กับ value ซึ่ง key จะเป็นชื่อไฟล์จริงๆ ใน server และ value จะเป็นชื่อไฟล์ก่อนอัพโหลดไฟล์
 
 เราจะทำการเปลี่ยนข้อมูลจาก json เป็น link เพื่อให้สามารถคลิก download ได้โดยเพิ่ม function `listDownloadFiles()` ใน Model Freelance ฟังก์ชันนี้จะใช้ได้ทั้ง 2 ฟิวด์ docs,covenant
 
 ```php
+<?php
 public function listDownloadFiles($type){
  $docs_file = '';
  if(in_array($type, ['docs','covenant'])){
@@ -492,6 +502,7 @@ public function listDownloadFiles($type){
 
  return $docs_file;
 }
+?>
 ```
 
 เรียกใช้งานที่ `views/freelance/view.php`
@@ -514,7 +525,7 @@ public function listDownloadFiles($type){
 
 จะแสดงผลแบบนี้
 
-![view-upload](/images/upload-file/view-upload2.png)
+![view-upload](/img/upload-file/view-upload2.png)
 
 
 ### สร้าง function สำหรับ download file
@@ -523,6 +534,7 @@ public function listDownloadFiles($type){
 เพิ่ม actionDownload ที่ controllers/Freelance.php
 
 ```php
+<?php
 public function actionDownload($id,$file,$file_name){
     $model = $this->findModel($id);
      if(!empty($model->ref) && !empty($model->covenant)){
@@ -531,9 +543,10 @@ public function actionDownload($id,$file,$file_name){
         $this->redirect(['/freelance/view','id'=>$id]);
     }
 }
+?>
 ```
 เราจะได้ไฟล์ตามชื่อไฟล์จริง ที่เคยอัพโหลดไว้ และ actionDownload จะส่งไฟล์ให้ client โดยไม่ได้ link ไฟล์ตรงๆ
 
-![view-upload](/images/upload-file/view-upload3.png)
+![view-upload](/img/upload-file/view-upload3.png)
 
 จากตัวอย่างเราจะเห็นว่าเราสามารถเก็บข้อมูลการอัพโหลดไฟล์ในรูปแบบ json ได้ซึ่งทำให้เราไม่ต้องสร้างฟิวด์หลายๆ ฟิวด์
