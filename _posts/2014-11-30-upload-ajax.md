@@ -1,11 +1,10 @@
-
 ---
 layout: post
 title: สร้างฟอร์ม Upload Files ด้วย AJAX
 ---
 
 ---
-![upload file](/images/upload-file-ajax.png)
+![upload file](/img/upload-file-ajax.png)
 
 เชื่อว่าหลายๆ คนคงเคยปวดหัวกับการสร้างฟอร์มเพื่อทำการอัพโหลดไฟล์ต่างๆ หรือไฟล์รูปภาพเองก็ตาม ถ้าเป็นฟอร์มอัพโหลดแบบธรรมดาก็คงไม่เท่าไหร่ แต่ถ้าเป็นแบบ ajax ก็คงจะปวดหัวไม่ใช่น้อย.. T_T' เดี่ยววันเราจะมาลองทำฟอร์ม Upload แบบ ajax กันซึ่งพระเอกของเราวันนี้คือ [fileinput](http://demos.krajee.com/widgets#fileinput) เป็น Widget ของ krajee เจ้าเก่า ซึ่งรวมอยู่ในแพ็คเก็จ [Yii2 Widget](http://demos.krajee.com/widgets) อยู่แล้ว ติดตั้งทีเดียวได้ครบเลย ^^
 
@@ -59,6 +58,7 @@ CREATE TABLE `photo_library` (
 ```
 
 แก้ไขฟิวด์ ref ให้เป็น hidenInput และเซ็ตค่า label เป็น false
+
 ```php
 <?= $form->field($model, 'ref')->hiddenInput(['maxlength' => 50])->label(false); ?>
 ```
@@ -67,6 +67,7 @@ CREATE TABLE `photo_library` (
 >โครงสร้างตาราง province [ดูได้ที่นี่](https://github.com/dimpled/Yii2-Learning-Source/blob/master/yii2-learning-source.sql)
 
 เรียกใช้งาน
+
 ```php
 <?= $form->field($model, 'province_id')->widget(Select2::classname(), [
     'data' => ArrayHelper::map(province::find()->all(),'PROVINCE_ID','PROVINCE_NAME'),
@@ -79,6 +80,7 @@ CREATE TABLE `photo_library` (
 ```
 
 เรียกใช้งาน DatePicker ของ kartik
+
 ```php
 <div class="row">
          <div class="col-sm-6 col-md-6">
@@ -250,12 +252,10 @@ use kartik\date\DatePicker;
 แก้ไขไฟล์ `views/photo-library/create.php`
 
 เราจะทำการส่งค่า `initialPreview` และ `initialPreviewConfig` เป็น array ว่างๆ ไปเพราะในตอน create ยังไม่มีข้อมูลที่จะแสดง เราจึงจำเป็นต้องส่ง array ว่างๆ ไปก่อน
+
 ```php
 <?php
-
 use yii\helpers\Html;
-
-
 /* @var $this yii\web\View */
 /* @var $model app\models\PhotoLibrary */
 
@@ -274,16 +274,13 @@ $this->params['breadcrumbs'][] = $this->title;
     ]) ?>
 
 </div>
-
 ```
 
 แก้ไขไฟล์ `views/photo-library/update.php` ใน actionUpdate เราจะทำการส่งค่า `initialPreview` และ `initialPreviewConfig`  ไปเพื่อให้ widget แสดง thumbnail รูปภาพที่เคยอัพโหลดไปแล้ว แต่ในตอนนี้เรายังไม่ได้สร้างฟังชันเราจะส่ง array ว่างๆ  ไปก่อน
 
 ```php
 <?php
-
 use yii\helpers\Html;
-
 /* @var $this yii\web\View */
 /* @var $model app\models\PhotoLibrary */
 
@@ -307,7 +304,7 @@ $this->params['breadcrumbs'][] = 'Update';
 ```
 
 ลองทดสอบรันจะได้ฟอร์มตามตัวอย่างนี้
-![](/images/upload-file/upload-ajax-form.png)
+![](/img/upload-file/upload-ajax-form.png)
 
 ## เพิ่ม function ใน Model PhotoLibrary
 
@@ -352,9 +349,6 @@ public function getProvince()
 ```
 
 ## สร้าง Function ใน Controller PhotoLibrary สำหรับการอัพโหลด Ajax
-
-
-
 
 `Uploads()` ฟังก์ชันนี้มีหน้าทีรับไฟล์จาก ajax from แล้วส่งข้อมูลมาทำการอัพโหลดไฟล์ สามารถอัพได้ทั้งภาพและไฟล์ ถ้าเป็นภาพจะทำการ resize และสร้าง thumbnail ให้
 
@@ -425,13 +419,17 @@ private function Uploads($isAjax=false) {
         return  [$initialPreview,$initialPreviewConfig];
 }
 ```
+
 `isImage()` ฟังก์ชันนี้เอาไว้แยกแยะระหว่างไฟล์และรูปภาพ
+
 ```php
 public function isImage($filePath){
         return @is_array(getimagesize($filePath)) ? true : false;
 }
 ```
+
 `getTemplatePreview()` เอาไว้เลือก template ที่จะแสดงผลว่าเป็น image หรือไฟล์อื่นๆ
+
 ```php
 private function getTemplatePreview(Uploads $model){
         $filePath = Freelance::getUploadUrl().$model->ref.'/thumbnail/'.$model->real_filename;
@@ -446,7 +444,9 @@ private function getTemplatePreview(Uploads $model){
         return $file;
 }
 ```
+
 `createThumbnail()` เป็น function ที่เอาไว้สร้าง thumbnail เล็กๆ เพื่อให้สามารถแสดงผลได้เร็ว
+
 ```php
 private function createThumbnail($folderName,$fileName,$width=250){
   $uploadPath   = Freelance::getUploadPath().'/'.$folderName.'/';
@@ -457,7 +457,9 @@ private function createThumbnail($folderName,$fileName,$width=250){
   return;
 }
 ```
+
 `actionDeletefileAjax()` เป็น action ที่เอาไว้ลบไฟล์ในกรณีที่คลิกลบไฟล์ จาก thumbnail ในตัวอัพโหลด ajax
+
 ```php
 public function actionDeletefileAjax(){
 
@@ -477,7 +479,9 @@ public function actionDeletefileAjax(){
     }
 }
 ```
+
 เป็นฟังก์ชันลบ folder ที่ใช้เก็บไฟล์ เราจะใช้ในกรณีหากมีการลบ record ก็ให้ตามไปลบไฟล์ทั้งหมดด้วย
+
 ```php
 private function removeUploadDir($dir){
     BaseFileHelper::removeDirectory(Freelance::getUploadPath().$dir);
@@ -512,6 +516,7 @@ public function actionUploadAjax(){
 ปรับปรุงให้ action เดิมๆ สามารถรองรับการอัพโหลดจากฟอร์ม ajax ได้ เพราะหากเค้าไม่คลิกปุ่มอัพโหลด ajax แล้วข้อมูลจะยังไม่ถูกอัพโหลด เราจะแก้ไขโดยการเรียกใช้งาน function Upload() ที่เราได้สร้างไว้และใช้กับ actionUploadAjax() ซึ่งสามารถนำมาใช้กับ acionCreate และ  actionUpdate ได้
 
 โดยเพิ่ม `this->Uploads(false);`เข้าไป
+
 ```php
 public function actionCreate()
 {
@@ -537,6 +542,7 @@ public function actionCreate()
 ```
 
 ส่วน actionUpdate() เพิ่ม getInitialPreview() เข้ามาด้วยเพื่อใช้แสดง thumbnail ในตัว ajax upload
+
 ```php
 public function actionUpdate($id)
  {
@@ -560,7 +566,9 @@ public function actionUpdate($id)
 
  }
 ```
+
 และแก้ไขไฟล์เพิ่มเติม views/freelance/create.php
+
 ```php
 <?= $this->render('_form', [
        'model' => $model,
@@ -866,6 +874,7 @@ class PhotoLibraryController extends Controller
 เพื่อให้สามารถดูรูปภาพที่เราได้อัพโหลดไปแล้ว เราจะทำการเรียกใช้งาน widget Gallery
 
 โดยเพิ่มที่ไฟล์ `views\photo-library\view.php`เพิ่มการเรียกใช้งานเข้าไปด้านล่างสุด ซึ่งเราจะเรียกใช้งาน `getThumbnails()` ที่เราได้สร้างไว้แล้วตอนแก้ไข Model PhotoLibrary
+
 ```php
 <div class="panel panel-default">
   <div class="panel-body">
@@ -877,13 +886,18 @@ class PhotoLibraryController extends Controller
 ## ลองใช้งาน
 
 หน้าหลัก
-![update](/images/upload-file/form-1.png)
+![update](/img/upload-file/form-1.png)
 
 การสร้างและแก้ไขข้อมูล
-![update](/images/upload-file/form-2.png)
+![update](/img/upload-file/form-2.png)
 
 หน้า preview
-![update](/images/upload-file/form-3.png)
+![update](/img/upload-file/form-3.png)
 
 เมื่อคลิกที่รูปภาพจะแสดงเป็น gallry
-![update](/images/upload-file/form-4.png)
+![update](/img/upload-file/form-4.png)
+
+
+[ดาวน์โหลด soucrecode ได้ที่นี่](https://github.com/dimpled/Yii2-Learning-Source)
+
+> ตัวอย่างอยู่ที่ PhotoLibraryController 

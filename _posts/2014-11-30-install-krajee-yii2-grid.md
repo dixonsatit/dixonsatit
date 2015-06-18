@@ -1,6 +1,6 @@
 ---
 layout: post
-title: การติดตั้ง GridView + ExportMenu
+title: Eport ข้อมูล pdf,xls,html,text,csv,json ด้วย kartik-v/yii2-grid
 ---
 
  ในตัวอย่างนี้เป็นการติดตั้งและใช้งาน widget ของ [kartik-v/yii2-grid](https://github.com/kartik-v/yii2-grid/blob/master/README.md) โดยที่ตัว GridView ตัวนี้มีความสามารถเยอะมากๆ แต่หลักๆ ที่ผมชอบเลยก็คือ สามารถ export ข้อมูลได้หลายแบบ เช่น .xls, .pdf, .csv, .txt, .html ซึ่งสามารถคลิกเลือกจากตัว GridView ได้โดยตรงเลย
@@ -12,7 +12,7 @@ title: การติดตั้ง GridView + ExportMenu
 
 ## Export from GridView
 
-![index](/images/index.png)
+![index](/img/index.png)
 
 ### Install
 ในการใช้งาน export menu จะต้องติดตั้ง  ` widget`ทั้งหมด 4 ตัว โดยเพิ่มที่ไฟล์ composer.json ในส่วนของ  ```require```
@@ -28,7 +28,7 @@ title: การติดตั้ง GridView + ExportMenu
 ```
 composer update
 ```
-![install grid](/images/install-grid.png "Logo Title Text 1")
+![install grid](/img/install-grid.png "Logo Title Text 1")
 
 ### Config
 ตัวอย่างนี้จะใช้ข้อมูลจากตาราง countries
@@ -38,6 +38,7 @@ composer update
 
 จากนั้นเพิ่ม module gridview ใน `config\web.php` ตามด้านล่าง ตัวนี้เป็น module ที่ใช้ในการ export  (csv, text, html, or xls)
 เพื่อรองรับการ export ที่เราคลิกเลือกจากเมนู
+
 ```php
 $config = [
     'id' => 'basic',
@@ -65,6 +66,7 @@ use kartik\grid\GridView;
 ```
 
 และในส่วนของการเรียกใช้งาน `GridView::widget([....])` เพิ่มค่าคอนฟิก properties `panel` เข้าไป และปิด ActionColumn ไว้เพราะเวลา export file เดี่ยวเมนูจะตามไปด้วย
+
 ```php
 <?= GridView::widget([
     'dataProvider' => $dataProvider,
@@ -92,36 +94,36 @@ use kartik\grid\GridView;
 - Pdf
 - Json
 
-![export menu](/images/grid-export.png)
+![export menu](/img/grid-export.png)
 
 ลองทำการทดลอง export เลือก format ที่ต้องการ ระบบจะบอกว่ามันจะ generated file สำหรับดาวน์โหลดให้ คุณต้องการทำหรือปล่าว ให้ตอบ OK
 > หากไม่ขึ้น dialog ลองเช็คว่ามีการปิด popup ใน browser หรือไม่
 
-![export1](/images/export1.png)
+![export1](/img/export1.png)
 ระบบจะ export file ให้รอซักครู่
-![export2](/images/export2.png)
+![export2](/img/export2.png)
 หลังจากเสร็จเราสามารถเปิดดูไฟล์ได้เลย
-![export3](/images/export3.png)
+![export3](/img/export3.png)
 
 ## ตัวอย่างไฟล์ที่ export
 ### Html
-![html](/images/html.png)
+![html](/img/html.png)
 ### Text
-![text](/images/txt.png)
+![text](/img/txt.png)
 ### CSV
-![csv](/images/csv.png)
+![csv](/img/csv.png)
 ### Pdf
-![pdf](/images/pdf.png)
+![pdf](/img/pdf.png)
 ### Excel
 ผมลองแล้วยัง error! ไม่แนใจเหมือนกันกับ `Gridview`ตัวนี้ แต่สามารถใช้ตัว export menu ได้
 ### Json
-![json](/images/json.png)
+![json](/img/json.png)
 
 <br>
 <br>
 ## Export Menu
 
-![](/images/exportmenu.png)
+![](/img/exportmenu.png)
 
 ตัวนี้เราได้ติดตั้งไปแล้วสามารถเรียกใช้ได้เลย export menu จะรับค่า DataProvider เหมือนกับ `GridView`
 
@@ -145,6 +147,7 @@ echo ExportMenu::widget([
 
 - แตกซิบไฟล์แล้วนำฟอนต์ทั้งหมดไปไว้ที่ `vendor/kartik-v/mpdf/ttfont/`
 - จากนั้นทำการแก้ไขไฟล์ `vendor/kartik-v/mpdf/config_fonts.php` เพิ่มชื่อฟอนต์เข้าไป
+
 ```php
  $this->fontdata = array(
    "thsaraban" => array(
@@ -154,18 +157,22 @@ echo ExportMenu::widget([
         'BI'   =>  "THSarabunNew-BoldItalic.ttf"
         ),
  ```
+
 - และเพิ่ม `thsaraban` เข้าไปที่
 ```php
 $this->sans_fonts = array('thsaraban',
 ```
 - ไปที่ไฟล์ `vendor/kartik-v/mpdf/config_lang2fonts.php` แล้วค้นหาคำว่า Thai แล้วแก้เป็นดังนี้
+
 ```php
   CASE "th":  CASE "tha":	// THAI
   $unifont = "thsaraban";
   break;
 ```
 - แก้ไขไฟล์ `vendor/kartik-v/yii2-mpdf/Pdf.php`  เพิ่ม `thsaraban` เข้าไป
+
 ```php
+<?php
 public function setApi()
    {
        $this->_mpdf = new mPDF(
@@ -183,8 +190,10 @@ public function setApi()
            $this->orientation
        );
    }
+   ?>
 ```
 - แก้ไขไฟล์ css ที่ `vendor/kartik-v/yii2-mpdf/assets/kv-mpdf-bootstrap.css` เพิ่มฟอนต์ `thsaraban` เข้าไป
+
 ```css
 body {
   font-family: "thsaraban","Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -195,7 +204,9 @@ body {
 }
 ```
 ### ลองเรียกใช้งาน
-![thaipdf](/images/export-pdf-thai.png)
+![thaipdf](/img/export-pdf-thai.png)
 
 ### ตัวอย่างไฟล์
-![thaipdf](/images/pdf-thai.png)
+![thaipdf](/img/pdf-thai.png)
+
+
