@@ -55,7 +55,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 ## Themeing
 - การสร้าง Theme
 - การสร้างและใช้งาน Assets
-- [การติดตั้งและใช้งาน AdminLTE]()
+- [การติดตั้งและใช้งาน AdminLTE](/2015/06/18/adminlte.html)
 
 ## Model
 - [รวมคำสั่งที่ใช้งานบ่อยของ model](/2014/11/30/query-model.html)
