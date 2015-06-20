@@ -9,11 +9,11 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 
 - [Yii คืออะไร](/2015/06/14/what-is-yii.html)
 - [การติดตั้ง](/2014/11/30/Installation.html)
-- [โครงสร้างโปรเจค]()
-- [การเปิดใช้งานและทดสอบ Hello World]()
-- [สร้าง controller, view]()
-- [สร้าง model]()
-- [ใช้งาน Gii]()
+- โครงสร้างโปรเจค
+- การเปิดใช้งานและทดสอบ Hello World
+- สร้าง controller, view
+- สร้าง model
+- ใช้งาน Gii
 - ใช้งาน GitHub กับ Yii โดยใช้ SourceTree
 
 ## CRUD
@@ -46,6 +46,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [เปิดการใช้งาน Pretty urls (mod_rewrite)](/2014/11/30/modrewrite.html)
 - [Relations & Virtual Attribute](/2014/11/30/relations.html)
 - [สร้างลิ้งเชื่อมกันระหว่าง frontend & backend](/2014/11/30/links-backend-to-frontend.html)
+
 - Register css file, js file
 - การใช้งาน Data Formatter
 - การใช้งาน mailer stmp google
@@ -53,9 +54,13 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [สร้างฟอร์ม Upload Files ด้วย AJAX](/2014/11/30/upload-ajax.html)
 
 ## Themeing
-- การสร้าง Theme
-- การสร้างและใช้งาน Assets
+- [การใช้ assetManager และปิดใช้งาน Bootstrap css,js,JQuery](/2015/06/20/disable-bootstrap-js-css-jquery.html)
 - [การติดตั้งและใช้งาน AdminLTE](/2015/06/18/adminlte.html)
+- [การสร้างและใช้งาน Assets](/2015/06/20/create-assets.html)
+- [การสร้าง Theme](/2015/06/20/create-theme-yii2.html)
+
+
+
 
 ## Model
 - [รวมคำสั่งที่ใช้งานบ่อยของ model](/2014/11/30/query-model.html)
