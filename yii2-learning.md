@@ -42,8 +42,6 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [การใช้งาน FlashMessage](/2015/06/17/flash-message.html)
 - [การใช้งาน FlashMessage + Glow](/2015/06/17/flash-message-growl-widget.html)
 - [เเปลี่ยน ActionColumn เดิมๆ เป็นสไตล์ ButtonGroup](/2014/11/30/action-column.html)
-- การสร้างและใช้งาน Assets
-- การสร้าง Theme
 - สร้างระบบ login อย่างง่าย
 - [เปิดการใช้งาน Pretty urls (mod_rewrite)](/2014/11/30/modrewrite.html)
 - [Relations & Virtual Attribute](/2014/11/30/relations.html)
@@ -54,6 +52,10 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - การใช้งาน mailer stmp mandrillapp 
 - [สร้างฟอร์ม Upload Files ด้วย AJAX](/2014/11/30/upload-ajax.html)
 
+## Themeing
+- การสร้าง Theme
+- การสร้างและใช้งาน Assets
+- [การติดตั้งและใช้งาน AdminLTE]()
 
 ## Model
 - [รวมคำสั่งที่ใช้งานบ่อยของ model](/2014/11/30/query-model.html)
@@ -62,7 +64,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - Virtual Attribute
 - [การใช้งาน TimestempBehavior ใน model เพื่ออัพเดทข้อมูลวันที่](/2015/06/14/model-behaviors.html)
 - [การใช้งาน SluggableBehavior ในการแปลงคำไทยเป็นภาษาทังกฤษเพื่อใช้กับ url ](/2015/06/15/sluggble-behavior.html)
-- [BlameableBehavior บันทึกข้อมูลรหัสผู้ใช้งานอัตโนมัติ](/2015/06/17/blameable-behavior.html)
+- [การใข้งาน BlameableBehavior บันทึกข้อมูลรหัสผู้ใช้งานอัตโนมัติ](/2015/06/17/blameable-behavior.html)
 
 ## Extension
 - [Eport ข้อมูล pdf,xls,html,text,csv,json ด้วย kartik-v/yii2-grid](/2014/11/30/install-krajee-yii2-grid.html)
