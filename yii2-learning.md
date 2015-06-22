@@ -27,7 +27,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - การใช้งาน DetailView
 - การใช้งาน GridView
 - การใช้งาน Boostrap ActiveForm
-- เปิดใช้งาน Ajax From Validateion
+- [เปิดใช้งาน Ajax From Validateion](/2015/06/22/ajax-form-validation.html)
 - การสร้าง Template สำหรับ gii ไว้ใช้เอง
 - [การใช้งาน Dropdown เพื่อสร้างตัวเลือก จังหวัด, อำเภอ, ตำบล](/2014/11/30/dependent-dropdown.html)
 
@@ -44,13 +44,10 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [เเปลี่ยน ActionColumn เดิมๆ เป็นสไตล์ ButtonGroup](/2014/11/30/action-column.html)
 - สร้างระบบ login อย่างง่าย
 - [เปิดการใช้งาน Pretty urls (mod_rewrite)](/2014/11/30/modrewrite.html)
-- [Relations & Virtual Attribute](/2014/11/30/relations.html)
 - [สร้างลิ้งเชื่อมกันระหว่าง frontend & backend](/2014/11/30/links-backend-to-frontend.html)
-
 - Register css file, js file
 - การใช้งาน Data Formatter
-- การใช้งาน mailer stmp google
-- การใช้งาน mailer stmp mandrillapp 
+- [ การส่งเมล์ โดยใช้  yii2-swiftmailer  ด้วย smtp-google & smtp-mandrill](/2015/06/22/mailer-smtp-google-smtp-mandrill.html)
 - [สร้างฟอร์ม Upload Files ด้วย AJAX](/2014/11/30/upload-ajax.html)
 
 ## Themeing
@@ -58,6 +55,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [การติดตั้งและใช้งาน AdminLTE](/2015/06/18/adminlte.html)
 - [การสร้างและใช้งาน Assets](/2015/06/20/create-assets.html)
 - [การสร้าง Theme](/2015/06/20/create-theme-yii2.html)
+- [ติดตั้งและใช้งาน Agency Theme](/2015/06/23/install-agency-theme.html)
 
 
 
@@ -66,14 +64,14 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [รวมคำสั่งที่ใช้งานบ่อยของ model](/2014/11/30/query-model.html)
 - การใช้งาน Validation แบบต่างๆ
 - Relation
-- Virtual Attribute
+- [Relations & Virtual Attribute](/2014/11/30/relations.html)
 - [การใช้งาน TimestempBehavior ใน model เพื่ออัพเดทข้อมูลวันที่](/2015/06/14/model-behaviors.html)
 - [การใช้งาน SluggableBehavior ในการแปลงคำไทยเป็นภาษาทังกฤษเพื่อใช้กับ url ](/2015/06/15/sluggble-behavior.html)
 - [การใข้งาน BlameableBehavior บันทึกข้อมูลรหัสผู้ใช้งานอัตโนมัติ](/2015/06/17/blameable-behavior.html)
 
 ## Extension
 - [Eport ข้อมูล pdf,xls,html,text,csv,json ด้วย kartik-v/yii2-grid](/2014/11/30/install-krajee-yii2-grid.html)
-- การสร้าง chart ด้วย HeightChart
+- [การติดตั้งและใช้งาน Highchart](/2015/06/23/highcharts.html)
 - ติดตั้ง Yii-User
 
 

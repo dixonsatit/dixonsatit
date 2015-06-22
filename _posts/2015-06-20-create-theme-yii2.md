@@ -3,9 +3,11 @@ layout : post
 title : การสร้าง Theme
 ---
 
-เชื่อว่าหลายๆ คนอาจจะไม่ชอบธีมเดิมๆ ที่ Yii 2  มีมาให้ ซึ่งเป็น [Bootstrap](http://getbootstrap.com) ส่วนตัวผมเองมองว่ามันก็สามารถใช้งานได้ดี และมีคอมโพเน็นส์มาให้ครบ แทบจะไม่ต้องหาอะไรเพิ่ม แต่การใช้งานจริงๆ เราคงไม่สามารถใช้แค่ธีม Bootstrap แบบเดิมๆ ได้ (มันคงเบื่อกันบ้างแหละ ^^ )
+เชื่อว่าหลายๆ คนอาจจะไม่ชอบธีมเดิมๆ ที่ Yii 2  มีมาให้ ซึ่งเป็น [Bootstrap](http://getbootstrap.com) ส่วนตัวผมเองมองว่ามันก็สามารถใช้งานได้ดี และมี component มาให้ครบ แทบจะไม่ต้องหาอะไรเพิ่ม แต่การใช้งานจริงๆ เราคงไม่สามารถใช้แค่ธีม Bootstrap แบบเดิมๆ ได้ (มันคงเบื่อกันบ้างแหละ ^^ )
 
-วันนี้จะแนะนำการเปลี่ยนธิมของ Yii 2 ซึ่งทำได้ง่ายมาก แค่เปลี่ยนคอนฟิกใน main.php ในส่วนของ components -> view ให้มันชี้ไปที่พาทที่เราเก็บธีมของเราไว้ (แค่นี้เองหรอ ดูเหมือนง่าย ง่ายเฉพาะคอนฟิกครับ ฮา..)
+> update ตอนนี้ผมทำเป็น theme ไว้แล้ว สามารถติดตั้งได้เลย[ที่นี่](https://github.com/dixonsatit/yii2-agency-theme)
+
+วันนี้จะแนะนำการเปลี่ยนธิมของ Yii 2 ซึ่งทำได้ง่ายมาก แค่เปลี่ยนคอนฟิกใน main.php ในส่วนของ components -> view ให้มันไปเรียกใช้งานธีมของเราที่ได้ตั้งค่าไว้ (แค่นี้เองหรอ ดูเหมือนง่าย ง่ายเฉพาะคอนฟิกครับ ฮา..)
 
 ```php
 'view' => [
@@ -40,15 +42,13 @@ title : การสร้าง Theme
 
 ![](/img/agency.png)
 
-เราจะต้องสร้างโฟลเดอร์เพื่อเก็บธีม โดยสร้างโฟลเดอร์ชื่อ themes/agency ที่ root โปรเจ็ค จากนั้นสร้างโฟลเดอร์ใน agency ดังนี้
+เราจะสร้างโฟลเดอร์เพื่อเก็บธีม ชื่อ /themes/agency ที่ application ของเรา จากนั้นสร้างโฟลเดอร์ใน agency ดังนี้
 
- - assets
- - views
- - dist
+ - `assets` เอาไว้เก็บ Asset Bundle ที่เราสร้างขึ้น
+ - `views` เก็บ layouts และ view ทั้งหมด
+ - `dist` เก็บไฟล์ css,js,images หรือ library ทั้งหมด
 
-`assets` เอาไว้เก็บ Asset Bundle ที่เราสร้างขึ้น
-`views` เก็บ layouts และ view ทั้งหมด
-`dist` เก็บไฟล์ css,js,images
+ให้ทำการ copy ไฟล์ต่อไปนี้
 
 - copy โฟลเดอร์ css,img,js จาก agency theme ไว้ที่ dist
 - copy โฟลเดอร์ layouts จาก /views  มาไว้ที่ /themes/agency/views/
@@ -149,8 +149,6 @@ class FontAwesomeAsset extends AssetBundle
 
 สร้าง layout `_base.php`
 
-ที่ /themes/agency/_base.php และทำการเรียกใช้งาน `AgencyAsset::register($this)` ที่เราได้สร้างไว้
-
 ```php
 <?php
 use yii\helpers\Html;
@@ -186,6 +184,10 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@agency/dist');
 <?php $this->endPage() ?>
 
 ```
+
+> ที่ /themes/agency/_base.php และทำการเรียกใช้งาน `AgencyAsset::register($this)` ที่เราได้สร้างไว้
+
+
 สร้าง layout `_header.php`
 
 ```php
@@ -249,6 +251,7 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@agency/dist');
     NavBar::end();
 ?>
 ```
+
 
 สร้าง layout `_footer.php`
 
@@ -838,6 +841,8 @@ This is the About page. You may modify the following file to customize its conte
 - สร้าง assets เพื่อเรียกใช้งาน css,js
 - สร้าง layout แบบอื่นๆ เพื่อใช้งานในรูปแบบที่แตกต่างกัน
 - ตั้งค่าที่ view  ให้ทำการเรียกใช้งาน view ที่ theme ของเรา
+
+หวังว่าคงพอเป็นตัวอย่างในการสร้าง theme ได้นะครับ
 
  
 
