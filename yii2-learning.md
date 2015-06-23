@@ -5,7 +5,12 @@ permalink: /yii2-learning/
 ---
 Yii Framework เป็น framework php ที่เรียกได้ว่าน่าจะมีครบแทบทุกอย่าง ที่จำเป็นในการพัฒนา Web Applicaion ซึ่งทำให้เราใช้เวลาในการพัฒนาที่สั้น แต่อาจต้องใช้เวลาในการเรียนรู้สูง (ฮา..) จึงอยากแบ่งปันประสบการณ์การใช้งานและเทคนิคการใช้งานแบบต่างๆ รวมไว้ให้อ่านที่นี่กัน.
 
-โค้ดทั้งหมดจะอยุ่ที่นี่ครับ [ดาวน์โหลด](https://github.com/dimpled/Yii2-Learning-Source/)
+โค้ดทั้งหมดจะอยู่ที่นี่ครับ [ดาวน์โหลด](https://github.com/dimpled/Yii2-Learning-Source/)
+
+## Git
+
+- การใช้งาน Github และ Bitbucket ด้วย SourceTree
+- การใช้งาน git กับ  Yii 2
 
 ## Getting Started
 
@@ -39,15 +44,14 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - สร้างฟอร์มค้นหา Ajax
 
 
-
 ## Tutorial
+- [การใช้งาน Data Formatte เพื่อแปลงวันที่, เวลา](/2015/06/23/date-formatter.html)
 - [การใช้งาน FlashMessage](/2015/06/17/flash-message.html)
 - [การใช้งาน FlashMessage + Glow](/2015/06/17/flash-message-growl-widget.html)
 - [เเปลี่ยน ActionColumn เดิมๆ เป็นสไตล์ ButtonGroup](/2014/11/30/action-column.html)
 - สร้างระบบ login อย่างง่าย
 - [เปิดการใช้งาน Pretty urls (mod_rewrite)](/2014/11/30/modrewrite.html)
 - [สร้างลิ้งเชื่อมกันระหว่าง frontend & backend](/2014/11/30/links-backend-to-frontend.html)
-- การใช้งาน Data Formatter
 - [ การส่งเมล์ โดยใช้  yii2-swiftmailer  ด้วย smtp-google & smtp-mandrill](/2015/06/22/mailer-smtp-google-smtp-mandrill.html)
 - [สร้างฟอร์ม Upload Files ด้วย AJAX](/2014/11/30/upload-ajax.html)
 - [สร้างฟอร์ม Upload File และเก็บข้อมูลเป็น json](/2014/11/30/upload-json.html)
@@ -76,6 +80,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [Eport ข้อมูล pdf,xls,html,text,csv,json ด้วย kartik-v/yii2-grid](/2014/11/30/install-krajee-yii2-grid.html)
 - [การติดตั้งและใช้งาน Highchart](/2015/06/23/highcharts.html)
 - ติดตั้ง Yii-User
+- การสร้าง extension บน packagist ร่วมกัน github
 
 
 
