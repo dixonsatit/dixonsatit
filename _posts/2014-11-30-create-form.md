@@ -27,11 +27,11 @@ use yii\bootstrap\ActiveForm;
 ```
 จากเดิม
 
-![vertical](/images/vertical.png)
+![vertical](/img/vertical.png)
 
 จะได้แบบนี้
 
-![vertical](/images/horizontal.png)
+![vertical](/img/horizontal.png)
 
 ## การแบ่งให้คอลัมน์ให้ Field
 > ตัวอย่างนี้จะไม่ได้ใช้ฟอร์มแบบแนวนอน (horizontal) ลองแบบแนวนอนแล้วยาก.. ฮา เอาแบบนี้ก่อนละกัน ถ้าทำได้จะมาบอกใหม่นะ
@@ -43,7 +43,7 @@ use yii\bootstrap\ActiveForm;
 
 เราสามารถแสดงผลข้อมูลของฟิวด์ให้อยู่ในแถวเดียวกันได้ ตัวอย่างจะใช้ คำนำหน้า,ชื่อ,นามกลุมมาไว้แถวเดียวกัน
 
-![แถวเดียวกัน](/images/form-inline.png)
+![แถวเดียวกัน](/img/form-inline.png)
 
 ก่อนอื่นต้องทำความเข้าใจ [Grid system](http://getbootstrap.com/css/#grid) ของ Bootstrap ก่อน
 
@@ -95,15 +95,15 @@ use yii\bootstrap\ActiveForm;
 `col-xs-`  Browser มันเช็คว่าเป็นหน้าจอที่ขนาดน้อยกว่า 768px จะแบ่งเป็น 2 คอลัมน์เท่าๆ กันด้านละ 6 แต่คอลัมน์ที่ 3 ตั้งค่าไว้ที่ 12 จะตกไปอยู่แถวถัดไป
 แต่ถ้าน้อยกว่า
 
-![3 column](/images/3-1.png)
+![3 column](/img/3-1.png)
 
 `col-sm-` browser มันเช็คว่าเป็นหน้าจอที่ขนาดมากกว่า 768px จะแบ่งเป็น 3 คอลัมน์เท่าๆ กัน
 
-![3 column](/images/3.png)
+![3 column](/img/3.png)
 
  `col-md-` browser มันเช็คว่าเป็นหน้าจอที่ขนาดมากกว่า 992px จะแบ่งเป็น 3 คอลัมน์เท่าๆ กัน
 
- ![3 column](/images/3-full.png)
+ ![3 column](/img/3-full.png)
 
 
  ## การใช้งาน DateField
