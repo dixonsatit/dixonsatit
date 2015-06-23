@@ -5,6 +5,8 @@ permalink: /yii2-learning/
 ---
 Yii Framework เป็น framework php ที่เรียกได้ว่าน่าจะมีครบแทบทุกอย่าง ที่จำเป็นในการพัฒนา Web Applicaion ซึ่งทำให้เราใช้เวลาในการพัฒนาที่สั้น แต่อาจต้องใช้เวลาในการเรียนรู้สูง (ฮา..) จึงอยากแบ่งปันประสบการณ์การใช้งานและเทคนิคการใช้งานแบบต่างๆ รวมไว้ให้อ่านที่นี่กัน.
 
+โค้ดทั้งหมดจะอยุ่ที่นี่ครับ [ดาวน์โหลด](https://github.com/dimpled/Yii2-Learning-Source/)
+
 ## Getting Started
 
 - [Yii คืออะไร](/2015/06/14/what-is-yii.html)
@@ -19,7 +21,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 ## CRUD
 
 - สร้างฟอร์ม เพิ่ม,ลบ,แก้ไข (CRUD)
-- การปรับแต่ง layout Form
+- [การปรับแต่ง layout Form](/2014/11/30/create-form.html)
 - การใช้งาน DropdownList
 - การสร้าง ItemAlias ใน model เพื่อใช้กับ DropdownList,CheckBoxList, RadioList
 - การใช้งาน CheckBoxList บันทึกข้อมูลโดยใช้ฟิวด์เดียว(คั่นด้วย',')
@@ -45,10 +47,10 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - สร้างระบบ login อย่างง่าย
 - [เปิดการใช้งาน Pretty urls (mod_rewrite)](/2014/11/30/modrewrite.html)
 - [สร้างลิ้งเชื่อมกันระหว่าง frontend & backend](/2014/11/30/links-backend-to-frontend.html)
-- Register css file, js file
 - การใช้งาน Data Formatter
 - [ การส่งเมล์ โดยใช้  yii2-swiftmailer  ด้วย smtp-google & smtp-mandrill](/2015/06/22/mailer-smtp-google-smtp-mandrill.html)
 - [สร้างฟอร์ม Upload Files ด้วย AJAX](/2014/11/30/upload-ajax.html)
+- [สร้างฟอร์ม Upload File และเก็บข้อมูลเป็น json](/2014/11/30/upload-json.html)
 
 ## Themeing
 - [การใช้ assetManager และปิดใช้งาน Bootstrap css,js,JQuery](/2015/06/20/disable-bootstrap-js-css-jquery.html)
@@ -56,6 +58,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [การสร้างและใช้งาน Assets](/2015/06/20/create-assets.html)
 - [การสร้าง Theme](/2015/06/20/create-theme-yii2.html)
 - [ติดตั้งและใช้งาน Agency Theme](/2015/06/23/install-agency-theme.html)
+- [การ Register css,js ด้วย Client Script](/2015/06/23/client-script.html)
 
 
 
