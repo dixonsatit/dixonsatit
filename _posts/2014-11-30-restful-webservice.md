@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RESTful Web Service
+title: RESTful Web Service เบื้องต้น
 ---
 
 ใน Yii 2 สามารถทำ RESTful ได้ง่ายๆ เลย โดยไม่ต้องติดตั้งเพิ่ม เพราะมีใน v.2 อยู่แล้ว
@@ -11,6 +11,7 @@ title: RESTful Web Service
 ในตัวอย่างนี้ใช้ข้อมูล location พร้อมพิกัด [ดาวโหลดที่นี่](https://raw.githubusercontent.com/bahar/WorldCityLocations/master/World_Cities_Location_table.sql) นำข้อมูลที่ได้ import เข้า mysql ครับ จากนั้นทำการ gii
 
 ต้นฉบับ [Guide REST Quick Start](http://www.yiiframework.com/doc-2.0/guide-rest-quick-start.html) ผมไม่ได้แปลนะ ผมเขียนตามความเข้าใจของผม (ถ้าจะพูดง่ายๆ ผมก็แปลไม่ออกนั่นแหละ T T')
+
 ## Create Model
 - นำเข้าข้อมูล location  [ดาวโหลดที่นี่](https://raw.githubusercontent.com/bahar/WorldCityLocations/master/World_Cities_Location_table.sql)
 - gii สร้าง Model ชื่อ Location
@@ -19,6 +20,7 @@ title: RESTful Web Service
 
 ## Create Controller
 ทำการสร้าง `LocationController.php` ไว้ที่ `controllers\` โดยที่ตัว controller จะต้อง extends ด้วย ActiveController ซึ่งเป็น class ที่จะทำให้ LocationController เดิมๆ ของเราสามารถใช้งาน RESTful ได้ จากนั้นเราจะต้องเซ็ต overwrite property
+
 - `$modelClass` เพื่อบอกว่า model ที่จะใช้ชื่อว่าอะไร อยู่ที่ใหน อย่าลืม use ด้วยล่ะ ซึ่งตอนนี้เราใช้ `app\models\Locations`
 - `serializer`ให้ web service ส่งข้อมูล link หน้าปัจจุบัน,หน้าต่อไป,และหน้าสุดท้ายมาด้วย สะดวกมากๆ
 - `collectionEnvelope` เป็นการตั้งชื่อ collection ครอบตัวข้อมูล location ของเราในที่นี้ตั้งชื่อว่า items
@@ -42,16 +44,24 @@ class LocationController extends ActiveController
 }
 ```
 ## Configuring URL Rule
-เป็นการเปิดการใช้งาน ให้เราสามารถใช้งาน url ในแบบ RESTful ได้ โดยเพิ่มเข้าไปที่ `config\main.php`
+
+การเปิดใช้งาน url ในแบบ RESTful  ให้ทำการตั้งค่าเพิ่มเข้าไปที่ `config\main.php`
 ในส่วน components โดยเพิ่มส่วนนี้เข้าไป
+
 >ในส่วนนี้เราต้องเปิดการใช้งาน PrettyUrl ให้ได้เสียก่อน [ดูการติดตั้งได้ที่นี่](https://github.com/dimpled/Yii2-Learning/blob/master/tutorial/modrewrite.md)
 
 ให้เพิ่มคำสั่งนี้เข้าไปที่ `rules` ซึ่งจะเป็นการระบุให้ LocationController  ใช้งาน `url` แบบ RESTful  ได้
+
 ```php
-['class' => 'yii\rest\UrlRule', 'controller' => 'location'],
+
+['class' => 'yii\rest\UrlRule', 'controller' => 'location']
 ```
+
 จะได้แบบนี้
+
+
 ```php
+
 'urlManager' => [
     'enablePrettyUrl' => true,
     'enableStrictParsing' => true,
@@ -63,6 +73,7 @@ class LocationController extends ActiveController
 ```
 
 หากใครเปิดการใช้งาน PrettyUrl อยู่แล้วก็เพิ่มเข้าไปแบบนี้
+
 ```php
 'urlManager' => [
   'class' => 'yii\web\UrlManager',
@@ -82,12 +93,14 @@ class LocationController extends ActiveController
 เปิดการเปิดการใช้งาน ให้สามารถรับค่าที่อยู่ในรูปแบบของ Json ได้ เพราะเวลาที่เราเรียกใช้งานหรือทำการส่งค่าอะไรมามันจะต้องอยู่ในรูปแบบของ Json โดยเพิ่มเข้าไปที่ application components ของ config/main.php  ใส่โค้ดเข้าไปดังนี้
 
 ของเดิมจะเป็นแบบนี้และส่วนของ `cookieValidationKey` ค่าจะไม่เหมือนกัน
+
 ```php
 'request' => [
     'cookieValidationKey' => 'xxxxx......',
 ],
 ```
 โดยเพิ่มเข้าไป
+
 ```php
 'request' => [
     'cookieValidationKey' => 'xxxxx......',
@@ -116,6 +129,7 @@ class LocationController extends ActiveController
 
 
 ### FIND All : Method GET
+
 Url
 ```
 http://127.0.0.1/yii2/yii2-Leanning-Source/web/location
@@ -123,6 +137,7 @@ http://127.0.0.1/yii2/yii2-Leanning-Source/web/location
 เป็นการเรียกข้อมูล location โดยใช้ method GET ซึ่งจะเป็นการแสดงข้อมูลของ location ทีละ page เทียบได้กับ sql `select * from location limit 20 offset 0`
 
 เรียกใช้งาน
+
 ```
 curl -i -H "Accept:application/json" "http://127.0.0.1/yii2/yii2-Leanning-Source/web/location"
 ```
@@ -133,6 +148,7 @@ curl -i -H "Accept:application/json" "http://127.0.0.1/yii2/yii2-Leanning-Source
 Result
 
 ```json
+
 HTTP/1.1 200 OK
 Date: Fri, 13 Mar 2015 05:40:59 GMT
 Server: Apache/2.4.9 (Unix) PHP/5.6.4
@@ -149,11 +165,14 @@ Content-Type: application/json; charset=UTF-8
 ```
 
 เราสามารถเปลี่ยนเป็น xml ได้ `application/xml` action อื่นๆ ก็เหมือนกันนะครับ
+
 ```
 curl -i -H "Accept:application/xml" "http://127.0.0.1/yii2/yii2-Leanning-Source/web/location"
 ```
 Result
+
 ```xml
+
 HTTP/1.1 200 OK
 Date: Fri, 13 Mar 2015 05:36:17 GMT
 Server: Apache/2.4.9 (Unix) PHP/5.6.4
@@ -181,10 +200,12 @@ http://127.0.0.1/yii2/yii2-Leanning-Source/web/location/5
 เทียบได้กับ sql `select * from location where id =5`
 
 เรียกใช้งาน
+
 ```
 curl -i -H "Accept:application/json" "http://127.0.0.1/yii2/yii2-Leanning-Source/web/location/5"
 ```
 Result
+
 ```json
 HTTP/1.1 200 OK
 Date: Thu, 12 Mar 2015 17:54:52 GMT
@@ -200,16 +221,19 @@ Content-Type: application/json; charset=UTF-8
 ## CREATE : Method POST
 
 url
+
 ```
 http://127.0.0.1/yii2/yii2-Leanning-Source/web/location
 ```
 เป็นการเพิ่มข้อมูล โดยใช้ method POST และต้องแนบข้อมูลที่จะทำการเพิ่มไปด้วย
 
 เรียกใช้งาน
+
 ```
 curl -i -H "Accept:application/json" -H "Content-Type:application/json" -XPOST "http://127.0.0.1/yii2/yii2-Leanning-Source/web/location" -d '{"id":null,"country":"Thailand","city":"Jalalabad","latitude":34.42,"longitude":70.4499969,"altitude":573}'
 ```
 result
+
 ```json
 HTTP/1.1 201 Created
 Date: Sun, 15 Mar 2015 01:50:40 GMT
@@ -225,16 +249,19 @@ Content-Type: application/json; charset=UTF-8
 # UPDATE : Method PATCT,PUT  
 
 url
+
 ```
 http://127.0.0.1/yii2/yii2-Leanning-Source/web/location/update/10574
 ```
 เป็นการแก้ไขข้อมูลที่ primary key = 10570 และส่งข้อมูลที่จะแก้ไขไปด้วย
 
 เรียกใช้งาน
+
 ```
 curl -i -H "Accept:application/json" -H "Content-Type:application/json" -XPATCH "http://127.0.0.1/yii2/yii2-Leanning-Source/web/location/update/10574" -d '{"country":"Thailand","city":"Jalalabad","latitude":34.42,"longitude":70.4499969,"altitude":573}'
 ```
 Result
+
 ```
 HTTP/1.1 200 OK
 Date: Sun, 15 Mar 2015 07:04:34 GMT
@@ -250,16 +277,19 @@ Content-Type: application/json; charset=UTF-8
 # DELETD : Method DELETE
 
 url
+
 ```
 http://127.0.0.1/yii2/yii2-Leanning-Source/web/location/delete/10570
 ```
 เป็นการลบข้อมูลโดยอ้างไปที่ primary key = 10570
 
 เรียกใช้งาน
+
 ```
 curl -i -H "Accept:application/json" -H "Content-Type:application/json" -XDELETE "http://127.0.0.1/yii2/yii2-Leanning-Source/web/location/delete/10570"
 ```
 Result
+
 ```json
 HTTP/1.1 204 No Content
 Date: Sun, 15 Mar 2015 06:55:55 GMT
@@ -270,22 +300,27 @@ Content-Type: application/json; charset=UTF-8
 ```
 
 # METHOD : HEAD
+
 ตรงนี้ยังไม่แน่ใจนะครับว่าเอาไว้ทำอะไรเพราะมันจะแสดงข้อมูลแค่ Header
 
 ## FIND BY PK : Method HEAD
 
 Url
+
 ```
 http://127.0.0.1/yii2/yii2-Leanning-Source/web/location
 ```
 เป็นการเรียกดูข้อมูล `location` ทีละ page โดยใช้ method HEAD ซึ่งจะเป็นการแสดงข้อมูลของ location ทีละ page แต่แสดงแค่ header  เทียบได้กับ sql `select * from location limit 20 offset 0`
 
 เรียกใช้งาน
+
 ```
 curl -i -H "Accept:application/json" -XHEAD "http://127.0.0.1/yii2/yii2-Leanning-Source/web/location"
+
 ```
 Result
 สังเกตดูจะไม่มีข้อมูลนะครับ จะมีแค่ header
+
 ```json
 HTTP/1.1 200 OK
 Date: Fri, 13 Mar 2015 04:40:46 GMT
@@ -303,6 +338,7 @@ Content-Type: application/json; charset=UTF-8
 ## FIND BY PK : Method HEAD
 
 url
+
 ```
 http://127.0.0.1/yii2/yii2-Leanning-Source/web/location/5
 ```
@@ -310,10 +346,12 @@ http://127.0.0.1/yii2/yii2-Leanning-Source/web/location/5
 เทียบได้กับ sql `select * from location where id =5` แต่จะไม่ได้ถูกนำมาแสดง
 
 เรียกใช้งาน
+
 ```
 curl -i -H "Accept:application/json" -XHEAD  "http://127.0.0.1/yii2/yii2-Leanning-Source/web/location/5"
 ```
 Result
+
 ```json
 HTTP/1.1 200 OK
 Date: Fri, 13 Mar 2015 10:15:20 GMT
@@ -326,4 +364,4 @@ Content-Type: application/json; charset=UTF-8
 > สำหรับคนที่ไม่ชอบ geek ก็ใช้แบบ Gui ได้ครับเป็น extension ของ Chrome Browser [ดาวน์โหลด](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm) ^^ หลายคนอาจจะนึกในใจว่า ทำไมไม่บอกตั้งแต่แรก....! เอ่อผมอยากให้ททุกคน geek ครับ ฮา สวัสดีครับ...
 
 ดูสิใช้งานง่ายมากเลย ...
-![postman](/images/postman.png)
+![postman](/img/postman.png)
