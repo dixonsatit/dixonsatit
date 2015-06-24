@@ -46,9 +46,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 
 ## Tutorial
 - [การใช้งาน Data Formatte เพื่อแปลงวันที่, เวลา](/2015/06/23/date-formatter.html)
-- [การใช้งาน FlashMessage](/2015/06/17/flash-message.html)
-- [การใช้งาน FlashMessage + Glow](/2015/06/17/flash-message-growl-widget.html)
-- [เเปลี่ยน ActionColumn เดิมๆ เป็นสไตล์ ButtonGroup](/2014/11/30/action-column.html)
+- [เปลี่ยน ActionColumn เดิมๆ เป็นสไตล์ ButtonGroup](/2014/11/30/action-column.html)
 - สร้างระบบ login อย่างง่าย
 - [เปิดการใช้งาน Pretty urls (mod_rewrite)](/2014/11/30/modrewrite.html)
 - [สร้างลิ้งเชื่อมกันระหว่าง frontend & backend](/2014/11/30/links-backend-to-frontend.html)
@@ -65,8 +63,6 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [การ Register css,js ด้วย Client Script](/2015/06/23/client-script.html)
 
 
-
-
 ## Model
 - [รวมคำสั่งที่ใช้งานบ่อยของ model](/2014/11/30/query-model.html)
 - การใช้งาน Validation แบบต่างๆ
@@ -76,9 +72,11 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [การใช้งาน SluggableBehavior ในการแปลงคำไทยเป็นภาษาทังกฤษเพื่อใช้กับ url ](/2015/06/15/sluggble-behavior.html)
 - [การใข้งาน BlameableBehavior บันทึกข้อมูลรหัสผู้ใช้งานอัตโนมัติ](/2015/06/17/blameable-behavior.html)
 
-## Extension
+## Extension & widget
 - [Eport ข้อมูล pdf,xls,html,text,csv,json ด้วย kartik-v/yii2-grid](/2014/11/30/install-krajee-yii2-grid.html)
 - [การติดตั้งและใช้งาน Highchart](/2015/06/23/highcharts.html)
+- [การใช้งาน FlashMessage](/2015/06/17/flash-message.html)
+- [การใช้งาน FlashMessage + Glow](/2015/06/17/flash-message-growl-widget.html)
 - ติดตั้ง Yii-User
 - การสร้าง extension บน packagist ร่วมกัน github
 
