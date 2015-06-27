@@ -9,6 +9,9 @@ title : การสร้าง Theme
 
 วันนี้จะแนะนำการเปลี่ยนธิมของ Yii 2 ซึ่งทำได้ง่ายมาก แค่เปลี่ยนคอนฟิกใน main.php ในส่วนของ components -> view ให้มันไปเรียกใช้งานธีมของเราที่ได้ตั้งค่าไว้ (แค่นี้เองหรอ ดูเหมือนง่าย ง่ายเฉพาะคอนฟิกครับ ฮา..)
 
+ ในส่วนของการตั้งค่า App Basic จะอยู่ที่ `config/main.php` ถ้าเป็น App Advance จะ Backend จะอยู่ที่ `backend/config/main.php`
+ Frontend จะอยู่ที่ `frontend/config/main.php`  
+
 ```php
 'view' => [
      'theme' => [

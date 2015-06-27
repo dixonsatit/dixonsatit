@@ -97,4 +97,11 @@ backend : http://localhost/yii-application/backend/web/index.php
 4. จากนั้นทำการทดสอบเข้าใช้งาน
 
 ## ปัญหาที่พบบ่อยๆ ในการติดตั้ง
---'
+
+- ไม่ได้สมัคร account github
+- ถามหา token github
+- php เวอร์ชั่นต่ำกว่า 5.4.0
+
+
+
+

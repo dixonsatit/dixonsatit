@@ -192,3 +192,5 @@ Wednesday, June 24, 2015 5:32:54 AM Indochina Time
 echo Yii::$app->formatter->asPercent(0.125, 2); // output: 12.50%
 echo Yii::$app->formatter->asEmail('cebe@example.com'); 
 ```
+
+[อ่านเพิ่มเติมได้ที่นี](http://www.yiiframework.com/doc-2.0/guide-output-formatting.html)

@@ -5,6 +5,8 @@ permalink: /yii2-learning/
 ---
 Yii Framework เป็น framework php ที่เรียกได้ว่าน่าจะมีครบแทบทุกอย่าง ที่จำเป็นในการพัฒนา Web Applicaion ซึ่งทำให้เราใช้เวลาในการพัฒนาที่สั้น แต่อาจต้องใช้เวลาในการเรียนรู้สูง (ฮา..) จึงอยากแบ่งปันประสบการณ์การใช้งานและเทคนิคการใช้งานแบบต่างๆ รวมไว้ให้อ่านที่นี่กัน.
 
+> สามารถติดตามผ่าน [fanpage](https://www.facebook.com/yii2Learning) ที่นี่ หรือ [feed](http://dixonsatit.github.io/feed.xml) ก็ได้ครับ
+
 โค้ดทั้งหมดจะอยู่ที่นี่ครับ [ดาวน์โหลด](https://github.com/dimpled/Yii2-Learning-Source/)
 
 ## Git
@@ -80,7 +82,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [การติดตั้งและใช้งาน Highchart](/2015/06/23/highcharts.html)
 - [การใช้งาน FlashMessage](/2015/06/17/flash-message.html)
 - [การใช้งาน FlashMessage + Glow](/2015/06/17/flash-message-growl-widget.html)
-- ติดตั้ง Yii-User
+- [การติดตั้งและใช้งาน dektrium/yii2-user](/2015/06/25/install-dektrium-yii2-user.html)
 - การสร้าง extension บน packagist ร่วมกัน github
 
 
