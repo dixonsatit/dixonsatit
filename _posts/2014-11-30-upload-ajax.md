@@ -25,6 +25,15 @@ title: สร้างฟอร์ม Upload Files ด้วย AJAX
 "2amigos/yii2-date-picker-widget" : "~1.0",
 "2amigos/yii2-gallery-widget" : "*"
 ```
+> yii2-image ต้องเปิดใช้งานที่ config ในส่วนของ components เพิ่มการตั้งค่าเข้าไป
+
+```
+'image' => [  
+    'class' => 'yii\image\ImageDriver',
+    'driver' => 'GD',  //GD or Imagick
+],
+```
+[อ่านเพิ่มเติมได้ที่นี่](http://dixonsatit.github.io/2014/11/30/upload-ajax.htmls)
 
 ## Gii Model และ Gii CRUD PhotoLibrary
 ในตัวอย่างนี้เราจะสร้างระบบเก็บรูปภาพโดยใช้ตารางชื่อว่า photolibrary และสร้างตารางตามนี้
@@ -900,4 +909,4 @@ class PhotoLibraryController extends Controller
 
 [ดาวน์โหลด soucrecode ได้ที่นี่](https://github.com/dimpled/Yii2-Learning-Source)
 
-> ตัวอย่างอยู่ที่ PhotoLibraryController 
+> ตัวอย่างอยู่ที่ PhotoLibraryController

@@ -25,6 +25,10 @@ composer require "dektrium/yii2-user:0.9.*@dev"
 
 เปิดใช้งาน module user และ components user
 
+- basic แก้ไขไฟล์ที่  `config/web.php`
+- advance ` frontend/config/main.php`
+- advance ` backend/config/main.php`
+
 ```php
 <?php
 
@@ -53,7 +57,7 @@ $config = [
 
 ```
 
-> หากคุณเปิดใช้งาน PrettyUrl ให้เพิ่ม `rule` สำหรับการใช้งาน module ที่ `config/main.php` ด้วยครับ
+> หากคุณเปิดใช้งาน PrettyUrl ให้เพิ่ม `rule` สำหรับการใช้งาน module ที่ config ด้วยครับ
 
 ```
 '<module:\w+>/<controller:\w+>/<action:\w+>' => '<module>/<controller>/<action>',
@@ -89,11 +93,13 @@ $config = [
 
 ## นำเข้าข้อมูลโดยใช้ Migrate
 
+> หารใครที่รันคำสั่ง `yii migrate` ไปแล้วในตอนติดตั้ง advance ให้เราเปลี่ยนชื่อตาราง `user` เป็นชื่ออื่นก่อนนะครับ หรือคิดว่าไม่ได้ใช้แล้วก็สามารถลบออกได้เลย แล้วหลังจากนั้นค่อย install ตามคำสั่งด้านล่าง
+
 ```
 php yii migrate/up --migrationPath=@vendor/dektrium/yii2-user/migrations
 ```
 
-> หากรันคำสั่งแล้วพบ error 
+> หากรันคำสั่งแล้วพบ error
 
 ```
 Exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [2002] Can't connect to local MySQL server through socket '/Applications/MAMP/tmp/mysql/mysql.sock' (2)'
@@ -208,14 +214,14 @@ Yii::$app->user->isGuest ?
 
 ## การใช้งาน
 
-ให้ทำการ register ก่อน เพราะระบบจะไม่มีข้อมูล user มาให้เลย ต้อง register 
+ให้ทำการ register ก่อน เพราะระบบจะไม่มีข้อมูล user มาให้เลย ต้อง register
 
 > ในส่วนของ module user เราจะทำการตั้งค่า `'enableUnconfirmedLogin' => false` เพื่อให้ไม่ต้องยืนยันอีเมล์หลังสมัครสมาชิก เพื่อลงทะเบียนในครั้งแรกก่อน
 
 ![](/img/user-register.png)
 
 
-ลงทะเบียนเสร็จให้ทำการ login 
+ลงทะเบียนเสร็จให้ทำการ login
 
 ![](/img/user-login.png)
 
@@ -228,16 +234,9 @@ Yii::$app->user->isGuest ?
 
 ![](/img/user-profile.png)
 
-หน้าจอ account 
+หน้าจอ account
 
 ![](/img/user-account.png)
 
 
 น่าจะพอช่วยให้การติดตั้ง yii-user ง่ายขึ้นนะครับ ^ ^
-
-
-
-
-
-
-

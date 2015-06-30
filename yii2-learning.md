@@ -18,6 +18,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 
 - [Yii คืออะไร](/2015/06/14/what-is-yii.html)
 - [การติดตั้ง](/2014/11/30/Installation.html)
+- [การติดตั้ง และการใช้งาน composer กับ Yii 2](/2015/06/29/using-extensions.html)
 - โครงสร้างโปรเจค
 - การเปิดใช้งานและทดสอบ Hello World
 - สร้าง controller, view
@@ -39,6 +40,11 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [เปิดใช้งาน Ajax From Validateion](/2015/06/22/ajax-form-validation.html)
 - การสร้าง Template สำหรับ gii ไว้ใช้เอง
 - [การใช้งาน Dropdown เพื่อสร้างตัวเลือก จังหวัด, อำเภอ, ตำบล](/2014/11/30/dependent-dropdown.html)
+
+## RBAC
+- [การใช้งาน RBAC อย่างง่าย](/2015/06/27/simple-rbac.html)
+- การใช้งาน RBAC อย่างง่ายกับ extension dektrium/yii2-use
+- การใช้งาน RBAC `yii\rbac\DbManager`
 
 ## Pjax
 - สร้างฟอร์ม submit ajax
@@ -85,7 +91,5 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [การติดตั้งและใช้งาน dektrium/yii2-user](/2015/06/25/install-dektrium-yii2-user.html)
 - การสร้าง extension บน packagist ร่วมกัน github
 
-
-
-
-
+## รวม link ต่างๆ
+- [รวม extension ต่างๆ และ tutorial ที่น่าสนใจ](/2015/06/30/extension.html)

@@ -2,12 +2,13 @@
 layout : post
 title : การสร้างและการใช้งาน AssetBundle
 ---
+![](/img/assets-resource.jpg)
 
-Asset Bundles คือตัวช่วยในการเรียกใช้งานกลุ่มไฟล์ต่างๆ ให้เราสามารถเรียกใช้งานได้ง่ายๆ ไม่ว่าจะเป็น css หรือ  js ยกตัวอย่าง เช่น 
+Asset Bundles คือตัวช่วยในการเรียกใช้งานกลุ่มไฟล์ต่างๆ ให้เราสามารถเรียกใช้งานได้ง่ายๆ ไม่ว่าจะเป็น css หรือ  js ยกตัวอย่าง เช่น
 
-- `yii\bootstrap\BootstrapAsset` เป็น assets ที่เอาไว้เรียกไฟล์ css ของ Bootstrap 
-- `yii\bootstrap\BootstrapPluginAsset` เป็น assets ที่เอาไว้เรียกไฟล์ js ของ Bootstrap 
-- `yii\web\YiiAsset` เป็น assets ที่เรียกใช้งาน yii.js 
+- `yii\bootstrap\BootstrapAsset` เป็น assets ที่เอาไว้เรียกไฟล์ css ของ Bootstrap
+- `yii\bootstrap\BootstrapPluginAsset` เป็น assets ที่เอาไว้เรียกไฟล์ js ของ Bootstrap
+- `yii\web\YiiAsset` เป็น assets ที่เรียกใช้งาน yii.js
 - `yii\web\JqueryAsset` เป็น assets ที่เรียกใช้งาน JQuery
 - `yii\jui\JuiAsset` เป็น assets ที่เรียกใช้งาน css,js jquery-ui
 - `app\assets\AppAsset` เป็น asset ดีฟอลต์ที่เรียกใช้งาน site.css และ asset ตัวนี้ ยังได้เรียก `YiiAsset`,`BootstrapAsset` ด้วย
@@ -86,7 +87,7 @@ MyAsset::register($this);
 
 ```
 
-เมื่อรันคำสั่ง composer update แล้ว ไลบราลี่ในส่วนของ Bower จะถูกดาวน์โหลดมาไว้ที่ `vendor/bower/fontawesome` เราก็สามารถเขียน asset เพื่อเรียกใช้งาน css ตัวนี้ได้ โดยไม่จำเป็นต้อง copy ไฟล์ css มาไว้ที่ web/css เพียงแค่ระบุใน asset ที่เราสร้างว่า sorucePath ของเราอยู่ที่ @bower/fontawesome 
+เมื่อรันคำสั่ง composer update แล้ว ไลบราลี่ในส่วนของ Bower จะถูกดาวน์โหลดมาไว้ที่ `vendor/bower/fontawesome` เราก็สามารถเขียน asset เพื่อเรียกใช้งาน css ตัวนี้ได้ โดยไม่จำเป็นต้อง copy ไฟล์ css มาไว้ที่ web/css เพียงแค่ระบุใน asset ที่เราสร้างว่า sorucePath ของเราอยู่ที่ @bower/fontawesome
 
 ต่อจากนั้น composer จะ copy ไฟล์ไปไว้ที่ web/assets/xxxx ซึ่ง xxxx จะเป็นชื่อโฟล์เดอร์ที่เก็บไฟล์ของแต่ละ asset และไฟล์ที่ใช้งานจริงๆ จะถูเรียกใช้งานจากที่นี่
 
@@ -100,11 +101,11 @@ namespace app\assets;
 
 use yii\web\AssetBundle;
 
-class FontAwesomeAsset extends AssetBundle 
+class FontAwesomeAsset extends AssetBundle
 {
-    public $sourcePath = '@bower/fontawesome'; 
-    public $css = [ 
-        'css/font-awesome.min.css', 
+    public $sourcePath = '@bower/fontawesome';
+    public $css = [
+        'css/font-awesome.min.css',
     ];
     public $publishOptions = [
         'only' => [
@@ -116,9 +117,3 @@ class FontAwesomeAsset extends AssetBundle
 ```
 
 ในส่วนของ $publishOptions เป็นการระบุว่าให้ copy ไปเฉพาะโฟลเดอร์ fonts,css เพราะปกติเมื่อเราระบุ `$sourcePath = '@bower/fontawesome'; ` และไม่ได้ระบุใน `$publishOptions` ในโฟลเดอร์ fontawesome มีอะไรมันจะทำการ copy ไปให้หมดเลย
-
-
-
-
-
-
