@@ -1,6 +1,7 @@
 ---
 layout : post
 title : การ Register css,js ด้วย Client Script
+excerpt :  การ Register css,js ด้วย Client Script, เวลา , yii2, yii Framework
 ---
 
 Yii 2 มีตัวช่วยในการจัดการพวก script file เช่น include ไฟล์พวก css,js หรือแทรกโค้ด css,js บางส่วนเข้าไปใช้เฉพาะ action ได้ ซึ่งโดยปกติ ถ้าเป็นไฟล์ที่ใช้ในทุกๆ หน้า เราจะใช้ Asset เป็นตัวจัดการให้อยู่แล้ว
@@ -35,7 +36,7 @@ $this->registerJs(" $('body').click(function(){
 - `View::POS_HEAD` ในส่วน `<header>`
 - `View::POS_BEGIN` ใต้แท็ก  `<body>` ตัวแรก
 - `View::POS_END`  ก่อนแท็กปิด `</body>`
-- `View::POS_READY` เป็นการประกาศเข้าไปในแท็ก ready ของ jquery เลย 
+- `View::POS_READY` เป็นการประกาศเข้าไปในแท็ก ready ของ jquery เลย
 - `View::POS_LOAD` สำหรับเมื่อมีการรันโค้ดถึงจะทำการ register script ให้.
 
 
@@ -47,7 +48,7 @@ $this->registerJs(" $('body').click(function(){
 <script type="text/javascript">jQuery(document).ready(function () {
  $('body').click(function(){
 	alert(5);
-}); 
+});
 });</script>
 
 ```
@@ -80,7 +81,7 @@ body { background: #f00; }
 
 ## Registering CSS File
 
-เป็นการ register ไฟล์ css เข้ามาใช้งาน ใน view ของเราชื่อ black-and-white.css พร้อมทั้งเรียกใช้งาน BootstrapAsset ซึ่งเป็น css ของ bootstrap มาใช้งานด้วย และระบุ css media เท่ากับ print ด้วย 
+เป็นการ register ไฟล์ css เข้ามาใช้งาน ใน view ของเราชื่อ black-and-white.css พร้อมทั้งเรียกใช้งาน BootstrapAsset ซึ่งเป็น css ของ bootstrap มาใช้งานด้วย และระบุ css media เท่ากับ print ด้วย
 
 > css media คือกำรหนดการแสดงผลหน้าตาเว็บเพจ บนสื่อประเภทต่างๆ เราสามารถกำหนด style ให้แตกต่างกันได้ เช่น ตอนที่เราเห็นบนหน้าจอ (screen) กับตอนที่สั่งพิมพ์ออกกระดาษ (print) ให้แสดงผลไม่เหมือนกัน  [อ่าน css media ได้ที่นี](http://www.enjoyday.net/webtutorial/css/css_chapter22.html)
 
@@ -94,7 +95,7 @@ $this->registerCssFile("http://example.com/css/themes/black-and-white.css", [
 $this->registerCssFile("@web/css/style.css");
 ```
 
-หาก view page source ก็จะพบการเรียกใช้งาน css 
+หาก view page source ก็จะพบการเรียกใช้งาน css
 
 ```html
 <link href="/yii2/yii2-Leanning-Source/web/css/style.css" rel="stylesheet">

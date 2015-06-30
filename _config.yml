@@ -5,10 +5,10 @@ url: "http://dixonsatit.github.io" # the base hostname & protocol for your site
 # THEME-SPECIFIC CONFIGURATION
 theme:
   # Meta
-  title: DixonSatit
+  title: Yii 2 Learning
   avatar: avatar.png
   gravatar: "7037e0cdf96cd3d4ad39b6c32ca29bd7" # Email MD5 hash
-  description: "A website with blog posts and pages" # used by search engines
+  description: "Yii 2 Learning, Yii 2, Yii Framework, Tutorial, extensions," # used by search engines
 
   # Header and footer text
   header_text: >

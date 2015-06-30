@@ -1,6 +1,7 @@
 ---
 layout: post
 title: เปิดการใช้งาน Pretty urls (mod_rewrite)
+excerpt :  เปิดการใช้งาน Pretty urls (mod_rewrite), yii2, yii Framework
 ---
 
 Pretty urls ก็คือการทำให้ url ที่มันจำยากๆ ให้มันสามารถอ่านเข้าใจได้ ซึ่งปกติคนทั่วไป ถ้าดูแล้วอาจจะงงๆ นอกจากคนที่อยู่ในสาย develop ก็คงจะพอเข้าใจ แต่ประโยชน์จริงๆ ของมันก็คือ ให้ Search Engine เข้าใจและจำ url ของเราได้ง่าย และยังเป็นประโยชน์กับการทำ SEO อีกด้วย หลายคนอาจจะยังงงๆ ดูตัวอย่างกันเลยดีกว่า T T'
@@ -9,7 +10,7 @@ Pretty urls ก็คือการทำให้ url ที่มันจำ
 ```
 http://www.domain.me/index.php?r=site/index
 ```
-ถ้าดูตาม url เราจะเข้าใจได้ว่า url นี้ รับค่าตัวแปรชื่อ  `r` ซึ่งเก็บค่า `site/index` 
+ถ้าดูตาม url เราจะเข้าใจได้ว่า url นี้ รับค่าตัวแปรชื่อ  `r` ซึ่งเก็บค่า `site/index`
 
 - `site` คือชื่อ controller
 - `index` คือชื่อ action
@@ -27,7 +28,7 @@ http://www.domain.me/site/index
 * `ennablePrettyUrl` คือเปิดการใช้งาน เซ็ตเป็น `true` เพื่อเปิดการใช้งาน
 
 ```php
-<?php 
+<?php
 'components'=>[
 //.....
 'urlManager' => [

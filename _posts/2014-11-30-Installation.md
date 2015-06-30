@@ -1,6 +1,7 @@
 ---
 layout: post
 title: การติดตั้ง Yii2
+excerpt :  การติดตั้ง Yii2, yii2, yii Framework
 ---
 
 
@@ -101,7 +102,3 @@ backend : http://localhost/yii-application/backend/web/index.php
 - ไม่ได้สมัคร account github
 - ถามหา token github
 - php เวอร์ชั่นต่ำกว่า 5.4.0
-
-
-
-

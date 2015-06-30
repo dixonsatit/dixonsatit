@@ -1,6 +1,7 @@
 ---
 layout: post
 title: สร้างฟอร์ม Upload Files ด้วย AJAX
+excerpt :  สร้างฟอร์ม Upload Files ด้วย AJAX, yii2, yii Framework
 ---
 
 ---

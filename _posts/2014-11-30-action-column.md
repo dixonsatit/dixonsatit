@@ -1,11 +1,12 @@
 ---
 layout: post
 title: เปลี่ยน สไตล์ ActionColumn เดิมๆ เป็น Bootstrap ButtonGroup
+excerpt : เปลี่ยน สไตล์ ActionColumn เดิมๆ เป็น Bootstrap ButtonGroup, yii2, yii Framework
 ---
 
 เห็น button group ใน bootstrap มันสวยดีก็เลยจับมาใส่ใน actionColumn  ซักหน่อย ของเดิมดูยาก บางทีมองแทบไม่ออกว่ามันคือปุ่ม
 
-ตัวอย่าง 
+ตัวอย่าง
 
 ![](/img/action-column/action-column.png)
 

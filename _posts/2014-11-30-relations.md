@@ -1,10 +1,11 @@
 ---
 layout: post
 title: Relations & Virtual Attribute
+excerpt :   Relations & Virtual Attribute, yii2, yii Framework
 ---
 ![sort](/img/sort.png)
 
-ตัวอย่างง่ายๆ ในการสร้าง relation กับ model ตัวอย่างนี้ผมจำลองข้อมูลไว้ 2 ตารางคือ Patient & Hospital 
+ตัวอย่างง่ายๆ ในการสร้าง relation กับ model ตัวอย่างนี้ผมจำลองข้อมูลไว้ 2 ตารางคือ Patient & Hospital
 โดยที่ตาราง patient จะเก็บรหัสของโรงพยาบาลไว้ คือ hospital_code
 ลองดูตัวอย่างง่ายๆ นะครับ
 
@@ -24,7 +25,7 @@ Hospital                  |
 
 อีกส่วนเราจะสร้าง virtual attribute ชื่อ  `$fullName` เพื่อแสดงข้อมูลชื่อ - นามสกุล โดยจะรวม โดยจะรวม name,surname ไว้เป็น field ใหม่เลยชื่อว่า fullName
 
-> ผมใส่เครื่องหมาย `@` นำหน้าเพื่อให้มันไม่ error เวลาที่ไม่สามารถเชื่อมกับ `Hospital` เช่น  กรณีไม่ได้บันทึกรหัสโรงพยาบาล เวลาแสดงผลที่ `GridView` มันจะ error เพราะไม่สามารถเชื่อมได้ 
+> ผมใส่เครื่องหมาย `@` นำหน้าเพื่อให้มันไม่ error เวลาที่ไม่สามารถเชื่อมกับ `Hospital` เช่น  กรณีไม่ได้บันทึกรหัสโรงพยาบาล เวลาแสดงผลที่ `GridView` มันจะ error เพราะไม่สามารถเชื่อมได้
 
 ## เพิ่มใน Model Patient
 ```php
@@ -39,7 +40,7 @@ class Patient extends \yii\db\ActiveRecord{
     public function getHospitalName(){
         return @$this->hospital->name;
     }
-    // virtual attribute fullName 
+    // virtual attribute fullName
     public function getFullname(){
         return $this->title .$this->name. " " .$this->surname;
     }
@@ -53,7 +54,7 @@ class Patient extends \yii\db\ActiveRecord{
         ];
     }
 ```
-## การเรียกใช้ใน Gridview 
+## การเรียกใช้ใน Gridview
 
 ```php
 <?= GridView::widget([
@@ -74,7 +75,7 @@ class Patient extends \yii\db\ActiveRecord{
 ]); ?>
 ```
 
-# การ Sort 
+# การ Sort
 
 ปกติเราสามารถคลิก sort `asc,desc` ได้จากหัว column ใน `GridView ` ได้ แต่ถ่าหากเป็นฟิวด์ที่เราเพิ่มขึ้นมาเช่น hospitalName, fullName นั้นจะไม่สามารถใช้งานได้เลย เราจะต้องปรับแต่งเพิ่มเติมนิดหน่อย
 
@@ -120,7 +121,7 @@ public function search($params)
 class PatientSearch extends Patient
 {
     public $hospitalName;
-    public $fullName;	
+    public $fullName;
 	public function rules()
     {
         return [
@@ -145,14 +146,3 @@ class PatientSearch extends Patient
 
 - [Yii 2.0: Filter & Sort by calculated/related fields in GridView Yii 2.0 ](http://www.yiiframework.com/wiki/621/filter-sort-by-calculated-related-fields-in-gridview-yii-2-0/)
 - [Yii 2.0: Displaying, Sorting and Filtering Model Relations on a GridView](http://www.yiiframework.com/wiki/653/displaying-sorting-and-filtering-model-relations-on-a-gridview/)
-
-
-
-
-
-
-
-
-
-
-

@@ -1,6 +1,7 @@
 ---
 layout : post
 title : รวม extension ต่างๆ และ tutorial ที่น่าสนใจ
+excerpt : รวม extension ต่างๆ และ tutorial ที่น่าสนใจ,yii2,yii Framework
 ---
 
 ![](/img/extension.jpg)

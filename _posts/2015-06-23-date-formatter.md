@@ -1,11 +1,12 @@
 ---
 layout : post
 title : การใช้งาน Data Formater เพื่อแปลงวันที่, เวลา
+excerpt :  การใช้งาน Data Formater เพื่อแปลงวันที่, เวลา , yii2, yii Framework
 ---
 
 Date Formatter  จะทำให้การแปลงข้อมูลวันที่ ให้เป็นเรื่องง่ายๆ ไม่ว่าจะแปลงเป็น วันที หรือเวลา แสดงวันที่แบบย่อๆ หรือแบบยาวๆ  ได้หลายแบบ อีกทั้งยังแสดงเวลาตาม `language` ที่ได้ตั้งค่าไว้ได้ เช่น th ก็จะแสดงภาษาไทย ถ้าเป็น en-US ก็จะแสดงภาษาอังกฤษ ลองดูตัวอย่างกันครับ
 
-เราสามารถเรียกผ่าน `Yii::$app->formatter->as` แล้วต่อด้วย format ที่ต้องการเช่น 
+เราสามารถเรียกผ่าน `Yii::$app->formatter->as` แล้วต่อด้วย format ที่ต้องการเช่น
 
 - `Yii::$app->formatter->asDate()`
 - `Yii::$app->formatter->asDateTime()`
@@ -97,7 +98,7 @@ echo Yii::$app->formatter->asTime($time, 'full');
 // ICU format
 echo Yii::$app->formatter->asDateTime($time, 'kk:mm:ss');
 // PHP date()-format
-echo Yii::$app->formatter->asDateTime($time, 'php:H:i:s'); 
+echo Yii::$app->formatter->asDateTime($time, 'php:H:i:s');
 ```
 
 แสดงผล
@@ -142,7 +143,7 @@ echo Yii::$app->formatter->asDateTime($time, 'full');
 
 // กำหนดเอง
 // ICU format
-echo Yii::$app->formatter->asDateTime($time, 'yyyy-MM-dd kk:mm:ss'); 
+echo Yii::$app->formatter->asDateTime($time, 'yyyy-MM-dd kk:mm:ss');
 // PHP date()-format
 echo Yii::$app->formatter->asDateTime($time, 'php:Y-m-d H:i:s');
 
@@ -190,7 +191,7 @@ Wednesday, June 24, 2015 5:32:54 AM Indochina Time
 
 ```
 echo Yii::$app->formatter->asPercent(0.125, 2); // output: 12.50%
-echo Yii::$app->formatter->asEmail('cebe@example.com'); 
+echo Yii::$app->formatter->asEmail('cebe@example.com');
 ```
 
 [อ่านเพิ่มเติมได้ที่นี](http://www.yiiframework.com/doc-2.0/guide-output-formatting.html)

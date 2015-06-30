@@ -1,6 +1,7 @@
 ---
 layout : post
 title : การติดตั้งและใช้งาน dektrium/yii2-user
+excerpt : การติดตั้งและใช้งาน dektrium/yii2-user, yii2, yii Framework
 ---
 ![](/img/user-index.png)
 

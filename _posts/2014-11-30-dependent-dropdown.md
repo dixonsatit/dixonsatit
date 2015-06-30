@@ -1,6 +1,7 @@
 ---
 layout: post
 title: การใช้งาน Dropdown เพื่อสร้างตัวเลือก จังหวัด, อำเภอ, ตำบล
+excerpt :     การใช้งาน Dropdown เพื่อสร้างตัวเลือก จังหวัด, อำเภอ, ตำบล yii Framework
 ---
 
 ในตัวอย่างนี้จะเป็นใช้ widget [Dependent Dropdown Widget](http://demos.krajee.com/widgets#depdrop) ของ krajee
@@ -198,7 +199,7 @@ action actionGetAmphur() ข้างใน function จะมีการเร
  ```
 
  และ function `getAmphur()` และ `getDistrict()` จะทำการเรียก  `MapData` เพื่อทำการนำค่าที่ได้สร้าง array ในรูปแบบ `['id'=>'','name'=>'']` เพราะตัว widget DepDrop ได้ระบบให้สร้างตาม format นี้
- 
+
  ```php
  protected function MapData($datas,$fieldId,$fieldName){
      $obj = [];

@@ -1,11 +1,12 @@
 ---
 layout : post
 title : การใช้งาน FlashMessage + Growl Widget
+excerpt : การใช้งาน FlashMessage + Growl Widget , yii2, yii Framework
 ---
 
 หากคุณเคยใช้ flashMessage มาบ้างแล้ว หากยังไม่เคยใช้ [ลองอ่านที่นี่](/2015/06/17/flash-message.html) คุณอาจจะรูสึกว่ามันไม่ค่อยสวยเลย วันนี้ผมมี `yii2-widget-growl` มาแนะนำ ซึ่งตัวนี้สวยงามและน่าใช้เลยทีเดียว
 
-ก่อนอื่นไปติดตั้งกันก่อน [yii2-widget-growl](https://github.com/kartik-v/yii2-widget-growl) 
+ก่อนอื่นไปติดตั้งกันก่อน [yii2-widget-growl](https://github.com/kartik-v/yii2-widget-growl)
 
 ```
 composer  require kartik-v/yii2-widget-growl "*"
@@ -14,7 +15,7 @@ composer  require kartik-v/yii2-widget-growl "*"
 ## กำหนดค่า
 
 ```php
-<?php 
+<?php
     Yii::$app->getSession()->setFlash('alert1', [
         'type' => 'success',
         'duration' => 12000,
@@ -42,10 +43,10 @@ composer  require kartik-v/yii2-widget-growl "*"
 ## การแสดงผล
 
 ```php
-<?php 
+<?php
 use Yii;
 use yii\helpers\Html;
- 
+
 //Get all flash messages and loop through them
 <?php foreach (Yii::$app->session->getAllFlashes() as $message):; ?>
 <?php
