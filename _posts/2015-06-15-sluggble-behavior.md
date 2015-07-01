@@ -1,7 +1,6 @@
 ---
 layout: post
 title: การใช้งาน SluggbleBehavior เพื่อแปลงคำไทยเป็นอังกฤษเพื่อใช้กับ Url
-excerpt :  การใช้งาน SluggbleBehavior เพื่อแปลงคำไทยเป็นอังกฤษเพื่อใช้กับ Urlิ , yii2, yii Framework
 ---
 
 SluggbleBehavior เป็น class ที่ใช้สำหรับแปลงข้อความจากภาษาอื่นๆ ให้เป็นภาษาอังกฤษเพื่อใช้กับ url ลองเล่นกันดู

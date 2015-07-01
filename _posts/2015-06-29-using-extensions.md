@@ -1,7 +1,6 @@
 ---
 layout : post
 title : การติดตั้ง และการใช้งาน composer กับ Yii 2
-excerpt : การติดตั้ง และการใช้งาน composer กับ Yii 2,yii2,yii Framework
 ---
 ![](/img/composer.jpg)
 

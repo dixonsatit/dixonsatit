@@ -1,7 +1,6 @@
 ---
 layout : post
 title : การเปิดใช้งาน Ajax Form Validation
-excerpt : การเปิดใช้งาน Ajax Form Validation, yii2, yii Framework
 ---
 
 ปกติ Yii 2 จะมี validation อยู่แล้วแต่มันจะเช็คก็ต่อเมื่อ มีการกดปุ่ม submit form ถึงจะแจ้ง error ออกมา ถ้าเทียบกับ ajax มันก็ถึอว่าช้าอยู่เหมือนกัน

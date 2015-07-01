@@ -1,7 +1,6 @@
 ---
-layout: post
-title: Eport ข้อมูล pdf,xls,html,text,csv,json ด้วย kartik-v/yii2-grid
-excerpt :    Eport ข้อมูล pdf,xls,html,text,csv,json ด้วย kartik-v/yii2-grid, yii2, yii Framework
+layout : post
+title : Eport ข้อมูล pdf,xls,html,text,csv,json ด้วย kartik-v/yii2-grid
 ---
 
  ในตัวอย่างนี้เป็นการติดตั้งและใช้งาน widget ของ [kartik-v/yii2-grid](https://github.com/kartik-v/yii2-grid/blob/master/README.md) โดยที่ตัว GridView ตัวนี้มีความสามารถเยอะมากๆ แต่หลักๆ ที่ผมชอบเลยก็คือ สามารถ export ข้อมูลได้หลายแบบ เช่น .xls, .pdf, .csv, .txt, .html ซึ่งสามารถคลิกเลือกจากตัว GridView ได้โดยตรงเลย

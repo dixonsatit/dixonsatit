@@ -1,7 +1,6 @@
 ---
 layout: post
 title: การติดตั้ง Yii2
-excerpt :  การติดตั้ง Yii2, yii2, yii Framework
 ---
 
 

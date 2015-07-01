@@ -1,7 +1,6 @@
 ---
 layout : post
 title : การสร้างและการใช้งาน AssetBundle
-excerpt : การสร้างและการใช้งาน AssetBundle, yii2, yii Framework
 ---
 ![](/img/assets-resource.jpg)
 

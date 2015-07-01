@@ -27,15 +27,15 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - ใช้งาน GitHub กับ Yii โดยใช้ SourceTree
 
 ## CRUD
-
+- การใช้งาน DetailView
+- การใช้งาน GridView
+- การใช้งาน Data Provider
 - สร้างฟอร์ม เพิ่ม,ลบ,แก้ไข (CRUD)
 - [การปรับแต่ง layout Form](/2014/11/30/create-form.html)
 - การใช้งาน DropdownList
 - การสร้าง ItemAlias ใน model เพื่อใช้กับ DropdownList,CheckBoxList, RadioList
 - การใช้งาน CheckBoxList บันทึกข้อมูลโดยใช้ฟิวด์เดียว(คั่นด้วย',')
 - การอัพโหลดไฟล์
-- การใช้งาน DetailView
-- การใช้งาน GridView
 - การใช้งาน Boostrap ActiveForm
 - [เปิดใช้งาน Ajax From Validateion](/2015/06/22/ajax-form-validation.html)
 - การสร้าง Template สำหรับ gii ไว้ใช้เอง
@@ -90,6 +90,11 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [การใช้งาน FlashMessage + Glow](/2015/06/17/flash-message-growl-widget.html)
 - [การติดตั้งและใช้งาน dektrium/yii2-user](/2015/06/25/install-dektrium-yii2-user.html)
 - การสร้าง extension บน packagist ร่วมกัน github
+
+## Extension By dixonsatit
+
+- [yii2-thai-year-formatter](https://github.com/dixonsatit/yii2-thai-year-formatter)
+- [yii2-agency-theme](https://github.com/dixonsatit/yii2-agency-theme)
 
 ## รวม link ต่างๆ
 - [รวม extension ต่างๆ และ tutorial ที่น่าสนใจ](/2015/06/30/extension.html)

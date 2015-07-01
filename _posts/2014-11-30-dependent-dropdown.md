@@ -1,7 +1,6 @@
 ---
 layout: post
 title: การใช้งาน Dropdown เพื่อสร้างตัวเลือก จังหวัด, อำเภอ, ตำบล
-excerpt :     การใช้งาน Dropdown เพื่อสร้างตัวเลือก จังหวัด, อำเภอ, ตำบล yii Framework
 ---
 
 ในตัวอย่างนี้จะเป็นใช้ widget [Dependent Dropdown Widget](http://demos.krajee.com/widgets#depdrop) ของ krajee

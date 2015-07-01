@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Relations & Virtual Attribute
-excerpt :   Relations & Virtual Attribute, yii2, yii Framework
 ---
 ![sort](/img/sort.png)
 

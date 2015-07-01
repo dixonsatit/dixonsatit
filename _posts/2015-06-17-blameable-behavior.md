@@ -1,7 +1,6 @@
 ---
 layout: post
 title: BlameableBehavior บันทึกข้อมูลรหัสผู้ใช้งานอัตโนมัติ
-excerpt :  BlameableBehavior บันทึกข้อมูลรหัสผู้ใช้งานอัตโนมัติ , yii2, yii Framework
 ---
 
 ![](/img/bleamable-behavior.png)

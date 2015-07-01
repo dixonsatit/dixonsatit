@@ -1,7 +1,6 @@
 ---
 layout: post
 title: การปรับแต่ง layout Form
-excerpt :    การปรับแต่ง layout Form, yii2, yii Framework
 ---
 
 ในตัวอย่างนี้ได้สร้างฟอร์มบันทึกข้อมูลพนักงาน ดูโครงสร้าง ตารางได้ที่

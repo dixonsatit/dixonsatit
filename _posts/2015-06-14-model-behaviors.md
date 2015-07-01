@@ -1,7 +1,6 @@
 ---
 layout: post
 title: การใช้งาน TimestampBehavior ใน model เพื่ออัพเดทข้อมูลวันที่
-excerpt : การใช้งาน TimestampBehavior ใน model เพื่ออัพเดทข้อมูลวันที่ , yii2, yii Framework
 ---
 
 ![timezone](/img/timezone.png)

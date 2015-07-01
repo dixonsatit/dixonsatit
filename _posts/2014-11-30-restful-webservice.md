@@ -1,7 +1,6 @@
 ---
 layout: post
 title: RESTful Web Service เบื้องต้น
-excerpt :   RESTful Web Service เบื้องต้น, yii2, yii Framework
 ---
 
 ใน Yii 2 สามารถทำ RESTful ได้ง่ายๆ เลย โดยไม่ต้องติดตั้งเพิ่ม เพราะมีใน v.2 อยู่แล้ว

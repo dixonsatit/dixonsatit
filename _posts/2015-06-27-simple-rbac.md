@@ -1,7 +1,7 @@
 ---
 layout : post
 title : การสร้าง RBAC ใน Yii 2 อย่างง่าย
-excerpt :  การสร้าง RBAC ใน Yii 2 อย่างง่าย,yii2,yii Framework
+
 ---
 
 ![](/img/simple-rbac-index.jpg)

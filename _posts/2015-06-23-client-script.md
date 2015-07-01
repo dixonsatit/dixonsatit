@@ -1,7 +1,6 @@
 ---
 layout : post
 title : การ Register css,js ด้วย Client Script
-excerpt :  การ Register css,js ด้วย Client Script, เวลา , yii2, yii Framework
 ---
 
 Yii 2 มีตัวช่วยในการจัดการพวก script file เช่น include ไฟล์พวก css,js หรือแทรกโค้ด css,js บางส่วนเข้าไปใช้เฉพาะ action ได้ ซึ่งโดยปกติ ถ้าเป็นไฟล์ที่ใช้ในทุกๆ หน้า เราจะใช้ Asset เป็นตัวจัดการให้อยู่แล้ว

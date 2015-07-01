@@ -1,7 +1,6 @@
 ---
 layout : post
 title : การติดตั้งและใช้งาน agency theme
-excerpt :  การติดตั้งและใช้งาน agency theme, yii2, yii Framework
 ---
 ![agency theme](/img/agency-theme-top.png)
 ใหนๆ ก็สอน[วิธีการสร้าง theme](/2015/06/20/create-theme-yii2.html) แล้ว ก็เลยเอา theme ที่สร้างมาทำเป็น extension ให้ติดตั้งใช้งานกันได้ง่ายๆ ผ่าน composer ซักหน่อย

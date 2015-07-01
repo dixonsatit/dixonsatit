@@ -1,7 +1,6 @@
 ---
 layout: post
 title: รวมคำสั่ง Query ใน Model ที่ใช้งานบ่อยๆ
-excerpt :   รวมคำสั่ง Query ใน Model ที่ใช้งานบ่อยๆ, yii2, yii Framework
 ---
 
 ## Find()

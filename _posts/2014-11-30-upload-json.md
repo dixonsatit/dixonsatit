@@ -1,7 +1,6 @@
 ---
 layout: post
 title: สร้างฟอร์ม Upload File และเก็บข้อมูลเป็น json
-excerpt :  สร้างฟอร์ม Upload File และเก็บข้อมูลเป็น json, yii2, yii Framework
 ---
 
 ![upload file](/img/upload-file-ajax.png)

@@ -1,7 +1,6 @@
 ---
 layout : post
 title : การใช้งาน Data Formater เพื่อแปลงวันที่, เวลา
-excerpt :  การใช้งาน Data Formater เพื่อแปลงวันที่, เวลา , yii2, yii Framework
 ---
 
 Date Formatter  จะทำให้การแปลงข้อมูลวันที่ ให้เป็นเรื่องง่ายๆ ไม่ว่าจะแปลงเป็น วันที หรือเวลา แสดงวันที่แบบย่อๆ หรือแบบยาวๆ  ได้หลายแบบ อีกทั้งยังแสดงเวลาตาม `language` ที่ได้ตั้งค่าไว้ได้ เช่น th ก็จะแสดงภาษาไทย ถ้าเป็น en-US ก็จะแสดงภาษาอังกฤษ ลองดูตัวอย่างกันครับ
@@ -26,7 +25,7 @@ Date Formatter  จะทำให้การแปลงข้อมูลว�
 	- [ICU format](http://userguide.icu-project.org/formatparse/datetime) สามารถระบุ  format ได้เลยเช่น `yyyy-MM-dd` จะได้ค่า ` 2014-10-06`
 	- [PHP date()-format](http://php.net/manual/en/function.date.php) ต้องระบุ `php:` นำหน้าเสมอก่อนใส่ format เช่น `php:Y-m-d` จะได้ `2014-10-06`
 
-> เราสามารถเปลี่ยนการแสดงผลเป็นภาษาไทยได้ โดยไปที่ config/main.php เพิ่ม `language=>'th'` เข้าไป ซึ่งโดยปกติค่า default จะเท่ากับ `en-US`
+> เราสามารถเปลี่ยนการแสดงผลเป็นภาษาไทยได้ โดยไปที่ config/main.php เพิ่ม `language=>'th_TH'` เข้าไป ซึ่งโดยปกติค่า default จะเท่ากับ `en-US`
 
 ## asDate()
 เป็นการแปลงข้อมูลให้แสดงผลในรูปแบบเฉพาะวันที่ แม้ว่าค่าที่รับเข้ามาจะมี เวลาอยู่ก็จะแสดงเฉพาะวันที่
@@ -45,7 +44,7 @@ echo Yii::$app->formatter->asDate($time, 'medium');
 echo Yii::$app->formatter->asDate($time, 'long');
 echo Yii::$app->formatter->asDate($time, 'full');
 
-Yii::$app->formatter->locale = 'th';
+Yii::$app->formatter->locale = 'th_TH'';
 echo Yii::$app->formatter->asDate($time, 'short');
 echo Yii::$app->formatter->asDate($time, 'medium');
 echo Yii::$app->formatter->asDate($time, 'long');
@@ -88,7 +87,7 @@ echo Yii::$app->formatter->asTime($time, 'medium');
 echo Yii::$app->formatter->asTime($time, 'long');
 echo Yii::$app->formatter->asTime($time, 'full');
 
-Yii::$app->formatter->locale = 'th';
+Yii::$app->formatter->locale = 'th_TH';
 echo Yii::$app->formatter->asTime($time, 'short');
 echo Yii::$app->formatter->asTime($time, 'medium');
 echo Yii::$app->formatter->asTime($time, 'long');
@@ -135,7 +134,7 @@ echo Yii::$app->formatter->asDateTime($time, 'medium');
 echo Yii::$app->formatter->asDateTime($time, 'long');
 echo Yii::$app->formatter->asDateTime($time, 'full');
 
-Yii::$app->formatter->locale = 'th';
+Yii::$app->formatter->locale = 'th_TH';
 echo Yii::$app->formatter->asDateTime($time, 'short');
 echo Yii::$app->formatter->asDateTime($time, 'medium');
 echo Yii::$app->formatter->asDateTime($time, 'long');
@@ -167,7 +166,7 @@ Wednesday, June 24, 2015 5:32:54 AM Indochina Time
 2015-06-24 05:32:54
 2015-06-24 05:32:54
 ```
-> ผมตั้งค่า   `Yii::$app->formatter->locale` เพราะอยากให้เห็นความแตกต่าง จริงๆ เราตั้งค่าที่ config/main.php ได้ โดยตั้งค่า `language => 'th'`
+> ผมตั้งค่า   `Yii::$app->formatter->locale` เพราะอยากให้เห็นความแตกต่าง จริงๆ เราตั้งค่าที่ config/main.php ได้ โดยตั้งค่า `language => 'th_TH'`
 
 
 
@@ -186,6 +185,20 @@ Wednesday, June 24, 2015 5:32:54 AM Indochina Time
    ],
 ],
 ```
+> หากใช้แล้วยังไม่เปลี่ยนเป็นภาษาไทยให้ลองตั้งค่าที่ php.ini เพื่อเปิด `php_intl`
+
+```
+extension=php_intl.dll
+
+[intl]
+intl.default_locale =th_TH.UTF-8
+; This directive allows you to produce PHP errors when some error
+; happens within intl functions. The value is the level of the error produced.
+; Default is 0, which does not produce any errors.
+;intl.error_level = E_WARNING
+```
+
+[ที่มา  http://stackoverflow.com/questions/3191664/list-of-all-locales-and-their-short-codes](http://stackoverflow.com/questions/3191664/list-of-all-locales-and-their-short-codes)
 
 เพิ่มเติม format อื่นๆ
 

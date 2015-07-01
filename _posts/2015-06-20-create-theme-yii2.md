@@ -1,7 +1,6 @@
 ---
 layout : post
 title : การสร้าง Theme
-excerpt : การสร้าง Theme, yii2, yii Framework
 
 ---
 

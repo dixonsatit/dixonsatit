@@ -1,7 +1,6 @@
 ---
 layout : post
 title : การใช้ assetManager และปิดใช้งาน Bootstrap css,js,JQuery
-excerpt : การใช้ assetManager และปิดใช้งาน Bootstrap css,js,JQuery , yii2, yii Framework
 ---
 
 หากเราไม่ต้องการใช้งาน Boostrap css,js หรือ JQuery ที่มากับ Yii 2 เราสามารถปิดการใช้งานได้ เพราะบางทีอาจใช้ css อื่นๆ ที่ไม่ใช่ Bootstrap เช่น JqueryMobile, ExtJs เป็นต้น

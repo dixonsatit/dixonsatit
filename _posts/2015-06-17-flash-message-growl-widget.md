@@ -1,7 +1,6 @@
 ---
 layout : post
 title : การใช้งาน FlashMessage + Growl Widget
-excerpt : การใช้งาน FlashMessage + Growl Widget , yii2, yii Framework
 ---
 
 หากคุณเคยใช้ flashMessage มาบ้างแล้ว หากยังไม่เคยใช้ [ลองอ่านที่นี่](/2015/06/17/flash-message.html) คุณอาจจะรูสึกว่ามันไม่ค่อยสวยเลย วันนี้ผมมี `yii2-widget-growl` มาแนะนำ ซึ่งตัวนี้สวยงามและน่าใช้เลยทีเดียว

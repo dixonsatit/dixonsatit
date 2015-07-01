@@ -1,7 +1,6 @@
 ---
 layout : post
 title : การติดตั้งและใช้งาน Highchart
-excerpt :  การติดตั้งและใช้งาน Highchart , yii2, yii Framework
 ---
 
 heighchart เป็น chart ที่สามารถใช้งานได้ฟรีๆ ถ้าไม่ทำเป็นการค้านะครับ ซึ่งตัวมันเองมี chart มากมายหลายแบบ ใช้กันไม่หมดครับ เยอะจริงๆ

@@ -1,7 +1,6 @@
 ---
 layout: post
 title : การส่งเมล์ โดยใช้  yii2-swiftmailer  ด้วย smtp-google & smtp-mandrill
-excerpt :  การส่งเมล์ โดยใช้  yii2-swiftmailer  ด้วย smtp-google & smtp-mandrill, yii2, yii Framework
 ---
 
 ปกติเวลาส่งเมล์ เราจะใช้ mail() ของ php ที่มีให้ มันมักจะมีปัญหาเมื่อส่งไปแล้ว จะเข้าที่ junk หรือไม่ก็ spam วันนี้จึงขอแนะนำการส่งเมล์ด้วย smtp จะช่วยแก้ปัญหานี้ได้ และยังมีบริการให้ใช้ฟรี หลายๆ ราย เช่น google,mandrill อีกทั้งเรายังสามารถทดสอบส่งเมล์ได้ ถึงแม้ระบบของเรายังไม่ขึ้น Prodruction ก็ตาม หรือจะสร้าง layout เมล์แบบต่างๆ ก็สามารถทำได้
