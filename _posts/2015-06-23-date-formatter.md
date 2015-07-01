@@ -44,7 +44,7 @@ echo Yii::$app->formatter->asDate($time, 'medium');
 echo Yii::$app->formatter->asDate($time, 'long');
 echo Yii::$app->formatter->asDate($time, 'full');
 
-Yii::$app->formatter->locale = 'th_TH'';
+Yii::$app->formatter->locale = 'th_TH';
 echo Yii::$app->formatter->asDate($time, 'short');
 echo Yii::$app->formatter->asDate($time, 'medium');
 echo Yii::$app->formatter->asDate($time, 'long');
@@ -206,5 +206,9 @@ intl.default_locale =th_TH.UTF-8
 echo Yii::$app->formatter->asPercent(0.125, 2); // output: 12.50%
 echo Yii::$app->formatter->asEmail('cebe@example.com');
 ```
+
+## แก้ปัญหาเปลี่ยน ค.ศ เป็น พศ
+
+ผมได้สร้างเป็น extension ไว้แล้วนะครับชื่อ [yii2-thai-year-formatter](https://github.com/dixonsatit/yii2-thai-year-formatter) ลองติดตั้งใช้งานดู หากพบเจอปัญหาก็แนะนำมาได้เลยนะครับ
 
 [อ่านเพิ่มเติมได้ที่นี](http://www.yiiframework.com/doc-2.0/guide-output-formatting.html)
