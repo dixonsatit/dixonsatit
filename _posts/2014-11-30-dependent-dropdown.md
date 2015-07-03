@@ -56,13 +56,16 @@ composer require kartik-v/yii2-widgets "*"
 
 ```php
 <?php
+use yii\helpers\Html;
+use yii\helpers\Url;
+use yii\helpers\ArrayHelper;
+use yii\bootstrap\ActiveForm;
+
+use kartik\widgets\DepDrop;
+
 use app\models\Province;
 use app\models\Amphur;
 use app\models\District;
-
-use yii\helpers\ArrayHelper;
-
-use kartik\widgets\DepDrop;
 ```
 
 ## สร้าง DropdownList จังหวัด
@@ -144,6 +147,30 @@ array(
 ## สร้าง Action เพื่อรองรับการคลิกเลือกจังหวัดและอำเภอ
 เราจะทำการสร้าง action ไว้ที่ controllers/EmployeeController.php
 action แรกจะเป็น actionGetAmphur() ตรงนี้จะรองรับการคลิกเลือกจังหวัดและส่งค่าอำเภอกลับไปให้กับ dropdownlist อำเภอเป็น json
+
+**Use**
+
+```
+use Yii;
+
+use yii\web\Controller;
+use yii\web\NotFoundHttpException;
+use yii\web\UploadedFile;
+use yii\filters\VerbFilter;
+use yii\helpers\Json;
+use yii\helpers\ArrayHelper;
+use yii\helpers\BaseFileHelper;
+
+use app\models\Province;
+use app\models\Amphur;
+use app\models\District;
+use app\models\Uploads;
+
+use yii\helpers\Html;
+use yii\helpers\Url;
+```
+
+เพิ่ม function
 
 ```php
 public function actionGetAmphur() {
@@ -293,4 +320,9 @@ action actionGetAmphur() ข้างใน function จะมีการเร
 ```
 
 ลองใช้กันดูนะครับ
-ดาวน์โหลด source code [ ได้ทีนี่](https://github.com/dimpled/Yii2-Learning-Source/releases)
+ดาวน์โหลด source code ทั้งหมด [ ได้ทีนี่](https://github.com/dimpled/Yii2-Learning-Source/releases)
+
+หรือดูเฉพาะไฟล์ได้ที่นี่
+
+- Controller [Controller](https://github.com/dimpled/Yii2-Learning-Source/blob/master/controllers/EmployeeController.php)
+- view [ _form.php](https://github.com/dimpled/Yii2-Learning-Source/blob/master/views/employee/_form.php)

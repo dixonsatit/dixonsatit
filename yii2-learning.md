@@ -25,6 +25,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - สร้าง model
 - ใช้งาน Gii
 - ใช้งาน GitHub กับ Yii โดยใช้ SourceTree
+- [การเปิดใช้งาน Multiple Database Connection](/2015/07/03/multiple-db-connection.html)
 
 ## CRUD
 - การใช้งาน DetailView

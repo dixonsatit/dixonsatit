@@ -209,11 +209,12 @@ class BlogController extends Controller
 ```php
 <?php
 
-namespace backend\controllers;
+namespace frontend\controllers;
 
 use Yii;
+use common\models\Blog;
 use common\models\User;
-use backend\models\UserSearch;
+use frontend\models\BlogSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -221,12 +222,11 @@ use yii\filters\AccessControl;
 use common\components\AccessRule;
 
 /**
- * UserController implements the CRUD actions for User model.
+ * BlogController implements the CRUD actions for Blog model.
  */
-class UserController extends Controller
+class BlogController extends Controller
 {
-  // ...
-  public function behaviors(){
+public function behaviors(){
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -238,7 +238,7 @@ class UserController extends Controller
                 'class'=>AccessControl::className(),
                 'only'=> ['index','create','update','view','delete'],
                 'ruleConfig'=>[
-                    'class'=>AccessRule::className() // เรียกใช้งาน accessRule ที่เราสร้างขึั้น
+                    'class'=>AccessRule::className()
                 ],
                 'rules'=>[
                     [
@@ -248,15 +248,18 @@ class UserController extends Controller
                             User::ROLE_USER,
                             User::ROLE_MODERATOR,
                             User::ROLE_ADMIN
+
                         ]
-                    ],[
+                    ],
+                    [
                         'actions'=>['update'],
                         'allow'=> true,
                         'roles'=>[
                             User::ROLE_MODERATOR,
                             User::ROLE_ADMIN
                         ]
-                    ],[
+                    ],
+                    [
                         'actions'=>['delete'],
                         'allow'=> true,
                         'roles'=>[User::ROLE_ADMIN]
