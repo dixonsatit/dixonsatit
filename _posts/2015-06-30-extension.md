@@ -17,6 +17,10 @@ Authentication
 - [dektrium/yii2-user](https://github.com/dektrium/yii2-user)
 - [amnah/yii2-user](https://github.com/amnah/yii2-user)
 
+i18n
+----
+- [yii2-multilingual-behavior(สร้าง content หลายๆ ภาษา)](https://github.com/OmgDef/yii2-multilingual-behavior)
+
 RBAC
 -----
 - [yii2-admin](https://github.com/mdmsoft/yii2-admin)

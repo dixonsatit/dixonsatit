@@ -11,4 +11,5 @@ Satit Seethaphon
 
 Khon Kaen
 
+facebook : [satit.seethaphon](https://www.facebook.com/satit.seethaphon)
 email : dixonsatit@gmail.com website : http://www.dimple.me

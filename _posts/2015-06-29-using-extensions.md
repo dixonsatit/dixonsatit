@@ -122,3 +122,22 @@ composer update
 ```
 
 หลังจากนั้น extension ที่เราติดตั้งจะถูกโหลดไปเก็บไว้ที่ `vendor` เพื่อรอให้เราเรียกใช้งานผ่าน namespace ได้
+
+## ปัญหาที่เจอในการติดตั้ง
+
+**ปัญหาถาม username  & password account Github**
+
+ให้ทำการสมัครสมาชิกที่ [Github.com](https://github.com/) และยืนยันอีเมล์ให้เรียบร้อย และนำ username & password มากรอกเวลาที่ composer  ถาม
+
+**ปัญหา access tokens**
+
+ปัญหานี้เกิดจากการที่ composer ต้องเข้าไปโหลดข้อมูลจากเว็บไซต์ github มันจึงต้องการระบุตัวตนผู้ใช้งานโดยการถามหา access tokens  ซึ่งเราสามารถสร้าง access tokens นี้ได้ง่ายๆ เพียงทำขั้นตอนดังต่อไปนี้
+
+![](/img/access-token.jpg)
+
+1. เข้า Github แล้วเข้าไปที่ account แล้วไปที่ settings
+2. คลิกเข้าไปที่ Personal access tokens เมนูด้านขวา
+3. คลิกที่ปุ่ม Generate new token
+4. ระบบจะถามรหัสผ่าน ให้เรากรอกรหัสผ่านเข้าไป
+5. จะพบกับหน้าจอ New Personal access token ให้ใส่คำอธิบายลงไปเล็กน้อย จากนั้นกดปุ่ม Generate token
+6. จะพบกับเลข token ยาว copy และนำมาใส่ที่ composer เวลาที่มันถาม หลังจากนั้นก็จะสามารถใช้งานได้ต่อไป
