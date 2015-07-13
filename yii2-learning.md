@@ -30,6 +30,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 ## CRUD
 - การใช้งาน DetailView
 - [การใช้งาน GridView และการปรับแต่ง Columns](/2015/07/06/gridview.html)
+- [การใช้งาน ActionColumn ใน GridView](/2015/07/11/action-column.html)
 - การใช้งาน Data Provider
 - สร้างฟอร์ม เพิ่ม,ลบ,แก้ไข (CRUD)
 - [การปรับแต่ง layout Form](/2014/11/30/create-form.html)
