@@ -28,7 +28,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [การเปิดใช้งาน Multiple Database Connection](/2015/07/03/multiple-db-connection.html)
 
 ## CRUD
-- การใช้งาน DetailView
+- [การใช้งาน DetailView](/2015/07/24/detail-view.html)
 - [การใช้งาน GridView และการปรับแต่ง Columns](/2015/07/06/gridview.html)
 - [การใช้งาน ActionColumn ใน GridView](/2015/07/11/action-column.html)
 - [การเตรียมข้อมูล Array เพื่อใช้กับ DropdownList,RadioList,CheckBoxList](/2015/07/21/item-alias.html)
