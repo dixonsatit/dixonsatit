@@ -32,11 +32,11 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [การใช้งาน GridView และการปรับแต่ง Columns](/2015/07/06/gridview.html)
 - [การใช้งาน ActionColumn ใน GridView](/2015/07/11/action-column.html)
 - [การเตรียมข้อมูล Array เพื่อใช้กับ DropdownList,RadioList,CheckBoxList](/2015/07/21/item-alias.html)
+- [การใช้งาน CheckBoxList และการบันทึกข้อมูล](/2015/07/25/checkbox-list.html)
 - การใช้งาน Data Provider
 - สร้างฟอร์ม เพิ่ม,ลบ,แก้ไข (CRUD)
 - [การปรับแต่ง layout Form](/2014/11/30/create-form.html)
 - การใช้งาน DropdownList
-- การสร้าง ItemAlias ใน model เพื่อใช้กับ DropdownList,CheckBoxList, RadioList
 - การใช้งาน CheckBoxList บันทึกข้อมูลโดยใช้ฟิวด์เดียว(คั่นด้วย',')
 - การอัพโหลดไฟล์
 - การใช้งาน Boostrap ActiveForm
@@ -85,6 +85,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [การใช้งาน TimestempBehavior ใน model เพื่ออัพเดทข้อมูลวันที่](/2015/06/14/model-behaviors.html)
 - [การใช้งาน SluggableBehavior ในการแปลงคำไทยเป็นภาษาทังกฤษเพื่อใช้กับ url ](/2015/06/15/sluggble-behavior.html)
 - [การใข้งาน BlameableBehavior บันทึกข้อมูลรหัสผู้ใช้งานอัตโนมัติ](/2015/06/17/blameable-behavior.html)
+- [การใช้งาน AttributeBehavior](/2015/07/25/attributeBehavior.html)
 
 ## Extension & widget
 - [ใช้งาน extension ThaiYearFormatter เพื่อแปลงวันที่เป็นภาษาไทย](/2015/07/04/thai-year-formatter.html)
