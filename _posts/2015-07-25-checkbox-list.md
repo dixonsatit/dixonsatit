@@ -245,7 +245,6 @@ public function getSkillName(){
 ![](/img/item-alias-detailview-1.png)
 
 
-
 จากนั้นเราก็จะสามารถ เพิ่มลบแก้ไขและแสดงผลข้อมูลจาก CheckBoxLis ได้ บทความนี้ผมแยกมาจาก [การเตรียมข้อมูล Array เพื่อใช้กับ DropdownList,RadioList,CheckBoxList](/2015/07/21/item-alias.html) เพื่อให้ดูง่ายขึ้น
 
 @dixonSatit

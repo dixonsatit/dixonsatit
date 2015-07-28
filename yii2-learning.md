@@ -7,7 +7,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 
 > สามารถติดตามผ่าน [fanpage](https://www.facebook.com/yii2Learning) ที่นี่ หรือ [feed](http://dixonsatit.github.io/feed.xml) ก็ได้ครับ
 
-โค้ดทั้งหมดจะอยู่ที่นี่ครับ [ดาวน์โหลด](https://github.com/dimpled/Yii2-Learning-Source/)
+โค้ดบางส่วนจะอยู่ที่นี่ครับ [ดาวน์โหลด](https://github.com/dimpled/Yii2-Learning-Source/) หรือดูตาม link ท้ายบทความได้ครับ
 
 ## Git
 
@@ -26,37 +26,40 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - ใช้งาน Gii
 - ใช้งาน GitHub กับ Yii โดยใช้ SourceTree
 - [การเปิดใช้งาน Multiple Database Connection](/2015/07/03/multiple-db-connection.html)
+- [การใช้งาน Request](/2015/07/25/request.html)
 
 ## CRUD
 - [การใช้งาน DetailView](/2015/07/24/detail-view.html)
-- [การใช้งาน GridView และการปรับแต่ง Columns](/2015/07/06/gridview.html)
-- [การใช้งาน ActionColumn ใน GridView](/2015/07/11/action-column.html)
 - [การเตรียมข้อมูล Array เพื่อใช้กับ DropdownList,RadioList,CheckBoxList](/2015/07/21/item-alias.html)
 - [การใช้งาน CheckBoxList และการบันทึกข้อมูล](/2015/07/25/checkbox-list.html)
-- การใช้งาน Data Provider
-- สร้างฟอร์ม เพิ่ม,ลบ,แก้ไข (CRUD)
 - [การปรับแต่ง layout Form](/2014/11/30/create-form.html)
 - การใช้งาน DropdownList
-- การใช้งาน CheckBoxList บันทึกข้อมูลโดยใช้ฟิวด์เดียว(คั่นด้วย',')
 - การอัพโหลดไฟล์
 - การใช้งาน Boostrap ActiveForm
 - [เปิดใช้งาน Ajax From Validateion](/2015/06/22/ajax-form-validation.html)
 - การสร้าง Template สำหรับ gii ไว้ใช้เอง
 - [การใช้งาน Dropdown เพื่อสร้างตัวเลือก จังหวัด, อำเภอ, ตำบล](/2014/11/30/dependent-dropdown.html)
 
+## GridView
+- [การใช้งาน GridView และการปรับแต่ง Columns](/2015/07/06/gridview.html)
+- [การใช้งาน ActionColumn ใน GridView](/2015/07/11/action-column.html)
+- [การใช้งาน CheckBoxColumn สำหรับการลบทีละหลายๆ Record](/2015/07/28/checkbox-coluumn.html)
+
+## DataProvider
+
+- การใช้งาน Array Data Provider
+- การใช้งาน SQL Data Provider
+- การใช้งาน Active Data Provider
+
 ## RBAC
 - [การใช้งาน RBAC อย่างง่าย](/2015/06/27/simple-rbac.html)
-- การใช้งาน RBAC อย่างง่ายกับ extension dektrium/yii2-use
+- การใช้งาน RBAC อย่างง่ายกับ extension dektrium/yii2-user
 - การใช้งาน RBAC `yii\rbac\DbManager`
 
 ## Pjax
 - สร้างฟอร์ม submit ajax
 - สร้าง Toggle Button Ajax
 - สร้างฟอร์มค้นหา Ajax
-
-## RESTful Web Service
-- [RESTful Web Service เบื้องต้น](/2014/11/30/restful-webservice.html)
-
 
 ## Tutorial
 - [การใช้งาน Data Formatte เพื่อแปลงวันที่, เวลา](/2015/06/23/date-formatter.html)
@@ -95,6 +98,9 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [การใช้งาน FlashMessage + Glow](/2015/06/17/flash-message-growl-widget.html)
 - [การติดตั้งและใช้งาน dektrium/yii2-user](/2015/06/25/install-dektrium-yii2-user.html)
 - การสร้าง extension บน packagist ร่วมกัน github
+
+## RESTful Web Service
+- [RESTful Web Service เบื้องต้น](/2014/11/30/restful-webservice.html)
 
 ## Extension By dixonsatit
 
