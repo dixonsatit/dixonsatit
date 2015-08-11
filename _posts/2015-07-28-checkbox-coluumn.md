@@ -164,4 +164,6 @@ public function actionDeleteAll(){
 
 จากนั้นทดลองทำการลบข้อมูลดู  หวังว่าคงจะเป็นประโยชน์ไม่มากก็น้อยครับ ติดปัญหาอะไร comment ไว้ด้านล่างเลยครับ
 
+ดูตัวอย่าง [Source code ได้ที่นี่](https://github.com/dixonsatit/yii2-workshop-items-alias/blob/master/controllers/ResumeController.php)
+
 @dixonSatit

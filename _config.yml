@@ -15,7 +15,7 @@ theme:
      <p> Yii2 Learning. </p>
   header_text_feature_image:
   footer_text: >
-   <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Yii2 Learning</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.dimpled.me" property="cc:attributionName" rel="cc:attributionURL">Satit Seethaphon</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://dixonsatit.github.io" rel="dct:source">http://dixonsatit.github.io</a><br>
+   <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/th/"><img alt="สัญญาอนุญาตของครีเอทีฟคอมมอนส์" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/3.0/th/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Yii2 Learning</span> โดย <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.dimpled.me" property="cc:attributionName" rel="cc:attributionURL">Satit Seethaphon</a> ผลงานนี้ ใช้ <a rel="license" href="http://creativecommons.org/licenses/by-nc/3.0/th/" > สัญญาอนุญาตของครีเอทีฟคอมมอนส์แบบ แสดงที่มา-ไม่ใช้เพื่อการค้า 3.0 ประเทศไทย</a>.<br>
    Powered by <a href="http://jekyllrb.com">Jekyll</a> with <a href="https://rohanchandra.github.io/project/type/">Type Theme</a>
 
   # Icons

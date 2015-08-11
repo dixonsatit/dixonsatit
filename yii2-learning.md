@@ -44,6 +44,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [การใช้งาน GridView และการปรับแต่ง Columns](/2015/07/06/gridview.html)
 - [การใช้งาน ActionColumn ใน GridView](/2015/07/11/action-column.html)
 - [การใช้งาน CheckBoxColumn สำหรับการลบทีละหลายๆ Record](/2015/07/28/checkbox-coluumn.html)
+- [การใช้งาน GridView หลายๆ ตัวในหน้าเดียวกัน](/2015/07/28/multiple-gridview-one-page.html)
 
 ## DataProvider
 
