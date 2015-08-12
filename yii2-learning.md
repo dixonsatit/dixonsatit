@@ -73,6 +73,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [สร้างฟอร์ม Upload File และเก็บข้อมูลเป็น json](/2014/11/30/upload-json.html)
 
 ## Themeing
+- [การเปลี่ยนหน้า Default Error ให้สวยงาม](/2015/08/13/change-default-error-page.html)
 - [การใช้ assetManager และปิดใช้งาน Bootstrap css,js,JQuery](/2015/06/20/disable-bootstrap-js-css-jquery.html)
 - [การติดตั้งและใช้งาน AdminLTE](/2015/06/18/adminlte.html)
 - [การสร้างและใช้งาน Assets](/2015/06/20/create-assets.html)
