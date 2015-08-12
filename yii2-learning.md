@@ -92,6 +92,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [การใช้งาน AttributeBehavior](/2015/07/25/attributeBehavior.html)
 
 ## Extension & widget
+- [การใช้งาน JsExpression](/2015/08/12/js-expression.html)
 - [ใช้งาน extension ThaiYearFormatter เพื่อแปลงวันที่เป็นภาษาไทย](/2015/07/04/thai-year-formatter.html)
 - [Eport ข้อมูล pdf,xls,html,text,csv,json ด้วย kartik-v/yii2-grid](/2014/11/30/install-krajee-yii2-grid.html)
 - [การติดตั้งและใช้งาน Highchart](/2015/06/23/highcharts.html)
