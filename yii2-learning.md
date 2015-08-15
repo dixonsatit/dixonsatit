@@ -9,10 +9,8 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 
 โค้ดบางส่วนจะอยู่ที่นี่ครับ [ดาวน์โหลด](https://github.com/dimpled/Yii2-Learning-Source/) หรือดูตาม link ท้ายบทความได้ครับ
 
-## Git
-
-- การใช้งาน Github และ Bitbucket ด้วย SourceTree
-- การใช้งาน git กับ  Yii 2
+## Tip & Trick
+- [รวม tim & trick ในการใช้งาน yii2 ที่สั้นๆ ผมจะรวบรวมไว้ที่นี่](/2015/08/14/yii2-tip-and-trick.html)
 
 ## Getting Started
 
@@ -27,6 +25,12 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - ใช้งาน GitHub กับ Yii โดยใช้ SourceTree
 - [การเปิดใช้งาน Multiple Database Connection](/2015/07/03/multiple-db-connection.html)
 - [การใช้งาน Request](/2015/07/25/request.html)
+
+## Git
+
+- การใช้งาน Github และ Bitbucket ด้วย SourceTree
+- การใช้งาน git กับ  Yii 2
+
 
 ## CRUD
 - [การใช้งาน DetailView](/2015/07/24/detail-view.html)
@@ -58,6 +62,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - การใช้งาน RBAC `yii\rbac\DbManager`
 
 ## Pjax
+- [การสร้างฟอร์มค้นหาแบบ ajax ด้วย pjax](/2015/08/14/ajax-form-search-wiht-pjax.html)
 - สร้างฟอร์ม submit ajax
 - สร้าง Toggle Button Ajax
 - สร้างฟอร์มค้นหา Ajax
