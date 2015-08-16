@@ -318,6 +318,6 @@ use yii\widgets\Pjax;
 
 หวังว่าคงทำให้เข้าใจเรื่อง pjax มากขึ้นนะครับ
 
-บทความนี้เป็นส่วนหนึี่งของ Workshop@Co-Space [ ดูหน้าตัวอย่าง](https://github.com/dixonsatit/yii2-workshop-co-sapce/blob/master/backend/views/user-manage/index.php)
+บทความนี้เป็นส่วนหนึ่งของ Workshop@Co-Space [ ดูหน้าตัวอย่าง](https://github.com/dixonsatit/yii2-workshop-co-sapce/blob/master/backend/views/user-manage/index.php)
 
 @dixonsatit
