@@ -174,7 +174,7 @@ Html::a('<i class="glyphicon glyphicon-duplicate"></i>',['controller/action','id
 
 ### โค้ดการเพิ่ม style Button Groups ให้กับปุ่มเดิมๆ ของเรา
 
-เราสามารถเพิ่ม Button Groups เข้าไปได้ และจะทำให้ปุ่มของเราดูชัดเจนขึ้น, มองง่ายขึ้น, ดูสวยขึ้น 
+เราสามารถเพิ่ม Button Groups เข้าไปได้ และจะทำให้ปุ่มของเราดูชัดเจนขึ้น, มองง่ายขึ้น, ดูสวยขึ้น
 
 ```html
 [
@@ -192,6 +192,12 @@ Html::a('<i class="glyphicon glyphicon-duplicate"></i>',['controller/action','id
 
 ![](/img/button-groups-copy.png)
 
+## หากใช้ Pjax
+ถ้าหากใช้ pjax ด้วยตรง link ต้องใส่ options  `'data-pjax' => '0'` ด้วยเพื่อให้ pjax ไม่ทำงานกับ link นี้ให้เป็น link url ปกติ
+
+```php
+   Html::a('<i class="glyphicon glyphicon-duplicate"></i>',['/search/index'],['data-pjax' => '0']);
+```
 
 ## สรุป ActionColumn
 

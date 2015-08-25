@@ -10,7 +10,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 โค้ดบางส่วนจะอยู่ที่นี่ครับ [ดาวน์โหลด](https://github.com/dimpled/Yii2-Learning-Source/) หรือดูตาม link ท้ายบทความได้ครับ
 
 ## Tip & Trick
-- [รวม tim & trick ในการใช้งาน yii2 ที่สั้นๆ ผมจะรวบรวมไว้ที่นี่](/2015/08/14/yii2-tip-and-trick.html)
+- [รวม tip & trick ในการใช้งาน yii2 ที่สั้นๆ ผมจะรวบรวมไว้ที่นี่](/2015/08/14/yii2-tip-and-trick.html)
 
 ## Getting Started
 
