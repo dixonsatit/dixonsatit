@@ -17,9 +17,7 @@ tags : rbac
 - การติดตั้งและสร้าง RBAC
 - รู้จักกับ Access Control Filter
 - การกำหนดค่าและเรียกใช้งาน RBAC ใน Controller
-- [Rule คืออะไร?](#rule-คืออะไร)
-- [สร้าง Rule เพื่อตรวจสอบก่อนแก้ไขบทความ](#สร้าง-rule-เพื่อตรวจสอบก่อนแก้ไขบทความ)
-- [เรียกใช้งาน Rule ใน AccessControl](#เรียกใช้งาน-rule-ใน-accesscontrol)
+- สร้าง Rule เพื่อตรวจสอบผู้ใช้งาน
 - ปรับปรุงระบบ Registration เพื่อใส่ค่า default Role
 - การสร้างระบบจัดการผู้ใช้งานเพื่อมอบสิทธิ์ให้กับผู้ใช้งาน
 
@@ -720,31 +718,31 @@ use yii\filters\AccessControl; //<<------ Use
 class BlogController extends Controller
 {
   public function behaviors()
-{
-    return [
-        'verbs' => [
-            'class' => VerbFilter::className(),
-            'actions' => [
-                'delete' => ['post'],
-            ],
-        ],
-        'access'=>[
-          'class'=>AccessControl::className(),
-          'rules'=>[
-            [
-              'allow'=>true,
-              'actions'=>['index','view','create','update'],
-              'roles'=>['Author']
-            ],
-            [
-              'allow'=>true,
-              'actions'=>['delete'],
-              'roles'=>['Admin']
+  {
+      return [
+          'verbs' => [
+              'class' => VerbFilter::className(),
+              'actions' => [
+                  'delete' => ['post'],
+              ],
+          ],
+          'access'=>[
+            'class'=>AccessControl::className(),
+            'rules'=>[
+              [
+                'allow'=>true,
+                'actions'=>['index','create','update'],
+                'roles'=>['Author']
+              ],
+              [
+                'allow'=>true,
+                'actions'=>['delete'],
+                'roles'=>['Editor']
+              ]
             ]
           ]
-        ]
-    ];
-}
+      ];
+  }
 
     //...
 
@@ -790,29 +788,17 @@ class BlogController extends Controller
 
 ในการตั้งค่า Access Control Filter และ RBAC กับ Controller ก็จะมีประมาณนี้
 
-# Rule คืออะไร?
+# สร้าง Rule เพื่อเช็คว่าเป็นเจ้าของบทความหรือไม่
 
-Rule คืออะไร? ถ้าจะให้ผมนิยาม Rule ง่ายๆ ผมคิดว่ามันคือตัวช่วยที่ทำให้ Role หรือ Permission ธรรมดาๆ  ให้สามารถเขียนฟังก์ชันเพิ่มเติมเพื่อตรวจสอบค่าบางอย่างตามเงื่อนไขของเราได้ เพราะ Role หรือ permission มันทำหน้าที่เพียงเช็คว่าเรามีสิทธิ์หรือไม่เท่านั้น ถ้าจะตรวจสอบด้วยเงื่อนไขอื่นๆ Rule คือคำตอบ
+ในการใช้งานจริงๆ ถ้าหากเราไม่ใช่คนสร้างบทความ ก็ไม่ควรจะไปแก้ไขบทความหรือลบบทความคนอื่นๆ ได้ ควรจะทำได้เฉพาะของตนเอง  ดังนั้นเราจะสร้าง Rule ขึ้นมา 1 ตัวเพื่อเอาไว้เช็คว่าเป็นเจ้าของบทความจริงหรือไม่ โดยตรวจสอบ user_id ที่ login เข้ามากับ created_by ที่อยู่ในตาราง blog หากเป็นคนๆ เดียวกันก็อนุญาติให้แก้ไขได้
 
-อย่างเช่น การใช้งานจริงๆ ในระบบ Blog ถ้าหากเราไม่ใช่คนสร้างบทความ ก็ไม่ควรจะไปแก้ไขบทความคนอื่นๆ ได้ ควรจะทำได้เฉพาะของตนเอง  ดังนั้นเราจะสร้าง Rule ขึ้นมา 1 ตัวเพื่อเอาไว้เช็คว่าเป็นเจ้าของบทความจริงหรือไม่ โดยตรวจสอบ user_id ที่ login เข้ามาเทียบกับฟิวด์ created_by ของในตาราง blog หากเป็นคนๆ เดียวกันก็อนุญาติให้แก้ไขได้
+Rule นั้นจะทำงานร่วมกัน Role ถ้าจะให้เข้าใจง่ายๆ Rule เป็นตัวช่วยที่ทำให้ Role ปกติสามารถเขียนฟังก์ชันและรับค่าเพื่อนำไปตรวจสอบตามเงื่อนไขของเราได้
 
 > ไม่รู้ว่าผมเข้าใจถูกหรือปล่าวนะ แต่เท่าที่ทำมามันประมาณนี้ ผิดถูกยังไงแนะนำด้วยนะครับ
 
-ลองดูที่ภาพด้านล่างนี้ ถ้าแบบปกตยังไม่มี Rule จะเห็นว่า ผู้ใช้งานจะสามารถ updateBlog  ได้เลยไม่ว่าจะเป็นของใครก็ตามก็จะสามารถแก้ไขได้หมด เพราะไม่มี rule คอยตรวจสอบ
+เราจะทำการสร้าง Rule ชื่อ AuthorRule.php เพื่อทำการเช็คว่าผู้ใช้งานเป็นเจ้าของบทความหรือไม่ ให้ทำการสร้างไฟล์ไว้ที่  common/rbac/AuthorRule.php
 
-![](/img/rbac-rule-1.jpg)
-
-เพื่อแก้ไขปัญหาข้างต้น เราจะทำการสร้าง Rule ขึ้นมาเพื่อเป็นตัวตรวจสอบว่าบทความที่เขียนขึ้นมาใช่ของตัวเองหรือไม่ ถ้าใช่ถึงจะอนุญาติให้แก้ไขได้
-
-![](/img/rbac-rule-2.jpg)
-
-Rule จะเป็นตัวช่วยให้เราสามารถตรวจสอบค่าบางอย่างเกี่ยวกับผู้ใช้งานได้ ซึ่งก็แล้วแต่ว่าเราจะตรวจสอบอะไรและใช้เงื่อนไขอะไร เพราะเราสามารถสร้างมันได้เอง
-
-# สร้าง Rule เพื่อตรวจสอบก่อนแก้ไขบทความ
-
-เราจะทำการสร้าง Rule ขึ้นมา 1 ตัว ชื่อ AuthorRule เอาไว้ตรวจสอบว่าบทความที่เรากำลังจะแก้ไขเป็นของเราจริงหรือไม่ ถ้าใช่ก็จะอนุญาติให้แก้ไขบทความ ถ้าไม่ใช่ก็จะ error forbidden แจ้งให้ทราบว่าไม่มีสิทธิ์เข้าใช้งาน
-
-ให้ทำการสร้างไฟล์ ชื่อ AuthorRule.php ไว้ที่  common/rbac/AuthorRule.php หากไม่มีโฟลเดอร์ rbac ให้สร้างได้เลย
+> หากไม่มีโฟลเดอร์ rbac ให้สร้างได้เลย
 
 จากนั้นทำการสร้าง Rule ตามโค้ดด้านล่าง
 
@@ -826,16 +812,16 @@ class AuthorRule extends Rule
 {
     public $name = 'isAuthor';
 
-    public function execute($user_id, $item, $params)
+    public function execute($userId, $item, $params)
     {
-        return isset($params['model']) ? $params['model']->created_by == $user_id : false;
+        return isset($params['blog']) ? $params['blog']->created_by == $userId : false;
     }
 }
  ?>
 
 ```
 
-Rule นี้มีหน้าที่รับค่าเข้า model Blog เข้ามาโดยใช้ created_by เปรียบเทียบกับ $userId ว่าตรงกันหรือไม่ ถ้าใช่ก็ return เป็น true ซึ่งเท่ากับยอมให้เข้าใช้งาน แต่ถ้าหากเป็น false ก็จะ แสดง error forbidden ออกไป ส่วนค่า $userId นั้นมันส่งเข้ามาให้อัตโนมัติเราแค่ตั้งชื่อแล้วก็เรียกใช้งานได้เลย
+Rule นี้มีหน้าที่รับค่าเข้า model Blog เข้ามาเพื่อตรวจสอบกับฟิวด์ created_by ตรงกับ $userId ที่ login ในตอนนี้หรือไม่ ถ้าใช้ก็ return เป็น true ซึ่งเท่ากับยอมให้เข้าใช้งาน แต่ถ้าหากเป็น false ก็จะ แสดง error forbidden ออกไป ส่วนค่า $userId นั้นมันส่งเข้ามาให้อัตโนมัติเราแค่ตั้งชื่อแล้วก็เรียกใช้งานได้เลย
 
 ในการเรียกใช้งานง่ายมากๆ  แค่ใช้ Yii::$app->user->can() เป็นตัวตรวจสอบให้ว่ามีสิทธ์หรือไม่
 
@@ -847,7 +833,7 @@ Rule นี้มีหน้าที่รับค่าเข้า model Bl
 - ลำดับแรก เป็นชื่อ Rule
 - ลำดับที่สอง เป็นค่า parameter ที่เราจะส่งเข้าไปเพื่อตรวจสอบ
 
-ต่อไปทำการแก้ไข rbac ใหม่ โดยเพื่ม rule เข้าไป ใน `RbacController` ใหม่ดังนี้
+ต่อไปทำการแก้ไข RbacController ใหม่ดังนี้
 
 ```php
 <?php
@@ -860,52 +846,49 @@ class RbacController extends \yii\console\Controller {
 
   public function actionInit(){
 
-    $auth = Yii::$app->authManager;
-    $auth->removeAll();
-    Console::output('Removing All! RBAC.....');
+      $auth = Yii::$app->authManager;
+      $auth->removeAll();
+      Console::output('Removing All! RBAC.....');
 
-    $createPost = $auth->createPermission('createBlog');
-    $createPost->description = 'Create a application';
-    $auth->add($createPost);
+      $updateBlog = $auth->createPermission('UpdateBlog');
+      $updateBlog->description = 'แก้ไขบทความ';
+      $auth->add($updateBlog);
 
-    $updatePost = $auth->createPermission('updateBlog');
-    $updatePost->description = 'Update application';
-    $auth->add($updatePost);
+      $authorRole =  new \common\rbac\AuthorRule;
+      $auth->add($authorRole);
 
-    $admin = $auth->createRole('Admin');
-    $auth->add($admin);
+      $updateOwnBlog = $auth->createPermission('UpdateOwnBlog');
+      $updateOwnBlog->description = 'แก้ไขเฉพาะบทความของตัวเอง';
+      $updateOwnBlog->ruleName = $authorRole->name;
+      $auth->add($updateOwnBlog);
+      $auth->addChild($updateOwnBlog,$updateBlog);
 
-    $author = $auth->createRole('Author');
-    $auth->add($author);
+      $manageUser = $auth->createRole('ManageUser');
+      $manageUser->description = 'สำหรับจัดการข้อมูลผู้ใช้งาน';
+      $auth->add($manageUser);
 
-    $management = $auth->createRole('Management');
-    $auth->add($management);
+      $author = $auth->createRole('Author');
+      $author->description = 'สำหรับการเขียนบทความ';
+      $auth->add($author);
+      $auth->addChild($author, $updateOwnBlog);
 
-    // เรียกใช้งาน AuthorRule
-    $rule = new \common\rbac\AuthorRule;
-    $auth->add($rule);
+      $editor = $auth->createRole('Editor');
+      $editor->description = 'สำหรับการตรวจสอบบทความ';
+      $auth->add($editor);
+      $auth->addChild($editor, $author);
 
-    // สร้าง permission ขึ้นมาใหม่เพื่อเอาไว้ตรวจสอบและนำ AuthorRule มาใช้งานกับ updateOwnPost
-    $updateOwnPost = $auth->createPermission('updateOwnPost');
-    $updateOwnPost->description = 'Update Own Post';
-    $updateOwnPost->ruleName = $rule->name;
-    $auth->add($updateOwnPost);
+      $admin = $auth->createRole('Admin');
+      $admin->description = 'สำหรับการดูแลระบบ';
+      $auth->add($admin);
 
-    $auth->addChild($author,$createPost);
+      $auth->addChild($admin, $editor);
+      $auth->addChild($admin, $manageUser);
 
-    // เปลี่ยนลำดับ โดยใช้ updatePost อยู่ภายใต้ updateOwnPost และ updateOwnPost อยู่ภายใต้ author อีกที
-    $auth->addChild($updateOwnPost, $updatePost);
-    $auth->addChild($author, $updateOwnPost);
+      $auth->assign($admin, 1);
+      $auth->assign($editor, 2);
+      $auth->assign($author, 3);
 
-    $auth->addChild($management, $author);
-    $auth->addChild($admin, $management);
-
-    $auth->assign($admin, 1);
-    $auth->assign($management, 2);
-    $auth->assign($author, 3);
-    $auth->assign($author, 4);
-
-    Console::output('Success! RBAC roles has been added.');
+      Console::output('Success! RBAC roles has been added.');
   }
 
 }
@@ -913,220 +896,9 @@ class RbacController extends \yii\console\Controller {
 
  ```
 
-ตัวอย่างการเรียกใช้งานง่ายๆ แค่ใช้ if และอย่างที่บอกมันต้องรับค่า Blog มาด้วย เพื่อนำไปตรวจเช็คใน AuthorRule อีกที
-
 ```php
 <?php
-if (\Yii::$app->user->can('updatePost', ['blog' => $model])) {
+if (\Yii::$app->user->can('updatePost', ['post' => $post])) {
     // update post
 }
 ```
-
-เมื่อนำไปใช้ใน Controller เราจะต้องนำ `Yii::$app->user->can()` ไปครอบใน actionUpdate() เพื่อตรวจสอบก่อนจะให้เข้าใช้งาน จากปกติ actionUpdate() ก็จะประมาณนี้
-
-```php
-<?php
-
-// ...
-public function actionUpdate($id)
-{
-    $model = $this->findModel($id);
-    if ($model->load(Yii::$app->request->post()) && $model->save()) {
-        return $this->redirect(['view', 'id' => $model->id]);
-    } else {
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-}
-```
-
-เมื่อเรียกใช้งาน Yii::$app->user->can() ด้วยก็จะประมาณนี้
-
-```php
-<?php
-use ForbiddenHttpException;
-
-// ...
-public function actionUpdate($id)
-{
-  $model = $this->findModel($id);
-  if (\Yii::$app->user->can('updateBlog', ['blog' => $model])) {
-
-    if ($model->load(Yii::$app->request->post()) && $model->save()) {
-        return $this->redirect(['view', 'id' => $model->id]);
-    } else {
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-
-  }else{
-     throw new ForbiddenHttpException('คุณไม่ได้รับอนุญาติให้เข้าใช้งาน!');
- }
-}
-```
-
-ให้ลอง create,update ดู ถ้าหากเป็นบทความของตัวเองก็จะสามารถแก้ไขได้เลย
-
-![](/img/rbac-rule-allow.png)
-
-แต่ถ้าหากไม่ใช้ก็จะแสดง eror forbidden ออกมาเพื่อแจ้งให้ผู้ใช้ทราบว่าไม่สามารถเข้าใช้งานได้
-
-![](/img/rbac-rule-forbidden.png)
-
-
-# เรียกใช้งาน Rule ใน AccessControl
-
-ในการใช้งานการตรวจสอบสิทธิ์ ถ้าหากเราใช้ `Yii::$app->user->can()` ไป if ใน action ดูไม่ค่อยสะดวกเท่าไหร่ เราจะเปลี่ยนมาเรียกใช้งานที่ AccessControl โดยใช้ `matchCallback` เป็นที่ตรวจสอบข้อมูล role ให้เรา
-
-จากปกติ
-
-```php
-public function behaviors()
-{
-    return [
-        'verbs' => [
-            'class' => VerbFilter::className(),
-            'actions' => [
-                'delete' => ['post'],
-            ],
-        ],
-        'access'=>[
-          'class'=>AccessControl::className(),
-          'rules'=>[
-            [
-              'allow'=>true,
-              'actions'=>['index','view','create','update'],
-              'roles'=>['Author']
-            ],
-            [
-              'allow'=>true,
-              'actions'=>['delete'],
-              'roles'=>['Admin']
-            ]
-          ]
-        ]
-    ];
-}
-```
-
-เปลี่ยนเป็น
-
-```php
-<?php
-
-public function behaviors()
-  {
-      return [
-          'verbs' => [
-              'class' => VerbFilter::className(),
-              'actions' => [
-                  'delete' => ['post'],
-              ],
-          ],
-          'access'=>[
-            'class'=>AccessControl::className(),
-            'rules'=>[
-              [
-                'allow'=>true,
-                'actions'=>['index','view','create'],
-                'roles'=>['Author']
-              ],
-              [
-                'allow'=>true,
-                'actions'=>['update'],
-                'roles'=>['Author'],
-                'matchCallback'=>function($rule,$action){
-                  $model = $this->findModel(Yii::$app->request->get('id'));
-                  if (\Yii::$app->user->can('UpdateBlog',['model'=>$model])) {
-                           return true;
-                  }
-                }
-              ],
-              [
-                'allow'=>true,
-                'actions'=>['delete'],
-                'roles'=>['Admin']
-              ]
-            ]
-          ]
-      ];
-  }
-```
-
-สังเกตว่า rule แรกปกติจะมี `index`,`view`,`create`,`update` เราจำเป็นจะต้องแยก update ออกมาเพราะถ้าหากไม่แยก มันจะทำการเช็คข้อมูลทุก action ซึ่งเราอยากให้เช็คแค่ update เพราะฉะนั้นเราจึงแยก update ออกมาต่างหากนอกนั้นเหมือนเดิม
-
-ส่วนที่ actionUpdate() ให้เราลบ `Yii::$app->user->can()` ออกให้เหลือเหมือนเดิม
-
-```php
-public function actionUpdate($id)
-{
-    $model = $this->findModel($id);
-    if ($model->load(Yii::$app->request->post()) && $model->save()) {
-        return $this->redirect(['view', 'id' => $model->id]);
-    } else {
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-}
-```
-
-จากนั้นทดลอง create,update ดูก็จะพบว่าสามารถใช้งานได้เหมือนเดิมแต่เราไม่ต้องไป if ครอบที่ actionUpdate แล้ว
-
-ปัญหาอีกอย่างคือถ้าหากเปิดแก้ไข blog แล้วไม่มีสิทธิ์มันจะแจ้งข้อความเป็น `You are not allowed to perform this action.` ซึ่งเราสามารถเปลี่ยนเป็นภาษาไทยได้เพียงเพิ่ม `denyCallback` เข้าไปดังนี้
-
-```php
-<?php
-// ...
-
-public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-            'access'=>[
-              'class'=>AccessControl::className(),
-              'denyCallback' => function ($rule, $action) {
-                  throw new ForbiddenHttpException('คุณไม่ได้รับอนุญาติให้เข้าใช้งาน!');
-              },
-              'rules'=>[
-                [
-                  'allow'=>true,
-                  'actions'=>['index','view','create'],
-                  'roles'=>['Author']
-                ],
-                [
-                  'allow'=>true,
-                  'actions'=>['update'],
-                  'roles'=>['Author'],
-                  'matchCallback'=>function($rule,$action){
-                    $model = $this->findModel(Yii::$app->request->get('id'));
-                    if (\Yii::$app->user->can('UpdateBlog',['model'=>$model])) {
-                             return true;
-                    }
-                  }
-                ],
-                [
-                  'allow'=>true,
-                  'actions'=>['delete'],
-                  'roles'=>['Admin']
-                ]
-              ]
-            ]
-        ];
-    }
-```
-
-ปกติหากไม่ใส่ `denyCallback` ก็จะเป็นภาษาอังกฤษแบบนี้
-
-![](/img/rbac-rule-forbidden-en.png)
-
-เมื่อกำหนดข้อความ error แล้วแล้วก็จะได้แบบนี้
-
-![](/img/rbac-rule-forbidden-th.png)
