@@ -3,6 +3,7 @@ layout: page
 title: Table Of Contents
 permalink: /yii2-learning/
 ---
+
 Yii Framework เป็น framework php ที่เรียกได้ว่าน่าจะมีครบแทบทุกอย่าง ที่จำเป็นในการพัฒนา Web Applicaion ซึ่งทำให้เราใช้เวลาในการพัฒนาที่สั้น แต่อาจต้องใช้เวลาในการเรียนรู้สูง (ฮา..) จึงอยากแบ่งปันประสบการณ์การใช้งานและเทคนิคการใช้งานแบบต่างๆ รวมไว้ให้อ่านที่นี่กัน.
 
 > สามารถติดตามผ่าน [fanpage](https://www.facebook.com/yii2Learning) ที่นี่ หรือ [feed](http://dixonsatit.github.io/feed.xml) ก็ได้ครับ
@@ -59,7 +60,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 ## RBAC
 - [การใช้งาน RBAC อย่างง่าย](/2015/06/27/simple-rbac.html)
 - การใช้งาน RBAC อย่างง่ายกับ extension dektrium/yii2-user
-- การใช้งาน RBAC `yii\rbac\DbManager`
+- [การใช้งาน RBAC DB](/2015/08/20/how-to-use-rbac-db.html)
 
 ## Pjax
 - [การสร้างฟอร์มค้นหาแบบ ajax ด้วย pjax](/2015/08/14/ajax-form-search-wiht-pjax.html)

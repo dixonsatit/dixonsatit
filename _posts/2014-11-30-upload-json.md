@@ -63,7 +63,7 @@ public function rules()
 
 ในส่วนของ form เราต้องเพิ่ม attribute `enctype="multipart/form-data"` ส่วนใหญ่หลายๆ คนอาจลืมผมก็เคยลืม ฮา..
 
-ไปที่ไฟล์ /views/freelance/_form.php แก้ไข `ActiveForm` ให้เป็นดังนี้
+ไปที่ไฟล์ /views/freelance/\_form.php แก้ไข `ActiveForm` ให้เป็นดังนี้
 
 ```php
 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
@@ -451,7 +451,7 @@ public function initialPreview($data,$field,$type='file'){
 }
 ?>
 ```
-ทำการแก้ไขไฟล์ views/freelance/_form.php เพิ่มการเรียกใช้งานเพื่อแสดง thumbnail ไฟล์ในตอนแก้ไข
+ทำการแก้ไขไฟล์ views/freelance/\_form.php เพิ่มการเรียกใช้งานเพื่อแสดง thumbnail ไฟล์ในตอนแก้ไข
 
 ```php
 <?= $form->field($model, 'docs[]')->widget(FileInput::classname(), [

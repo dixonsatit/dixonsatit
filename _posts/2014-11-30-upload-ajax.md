@@ -53,6 +53,16 @@ CREATE TABLE `photo_library` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `ref` (`ref`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
+
+CREATE TABLE `uploads` (
+  `upload_id` int(11) NOT NULL AUTO_INCREMENT,
+  `ref` varchar(50) DEFAULT NULL,
+  `file_name` varchar(150) DEFAULT NULL COMMENT 'ชื่อไฟล์',
+  `real_filename` varchar(150) DEFAULT NULL COMMENT 'ชื่อไฟล์จริง',
+  `create_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `type` int(11) DEFAULT NULL COMMENT 'ประเภท',
+  PRIMARY KEY (`upload_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8
 ```
 
 หลังจากสร้างตารางเรียบร้อย ให้ทำการ gii Model PhotoLibrary และ crud PhotoLibrary
