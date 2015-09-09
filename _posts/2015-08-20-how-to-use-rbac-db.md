@@ -1367,6 +1367,39 @@ class User extends ActiveRecord implements IdentityInterface
 
 หลังจากที่ปรับปรุง model User เสร็จเรียบร้อยให้ทำการ Gii CRUD model `User` และปรับปรุงโค้ดในแต่ละส่วนดังต่อไปนี้
 
+> เนื่องจากเราทำการเพิ่ม scenarios() เข้าไปจำเป็นต้องระบุ scenario = registration ในตอน signup ด้วย
+
+ให้เราเปิดไปที่ไฟล์ frontend/models/SignupForm.php ไปที่ `actionSignup()` เพิ่มโค้ดตามนี้
+
+```php
+<?php
+
+//...
+
+public function signup()
+{
+    if ($this->validate()) {
+        $user = new User(['scenario'=>'registration']); // <<<<------
+        $user->username = $this->username;
+        $user->email = $this->email;
+        $user->setPassword($this->password);
+        $user->generateAuthKey();
+        if ($user->save()) {
+
+            $auth = Yii::$app->authManager;
+            $authorRole = $auth->getRole('Author');
+            $auth->assign($authorRole, $user->getId());
+
+            return $user;
+        }
+    }
+
+    return null;
+}
+
+```
+
+
 **Gii CRUD User**
 
 ไปที่ backend แล้ว gii CRUD
@@ -1552,7 +1585,7 @@ public function actionCreate()
         $model->setPassword($model->password);
         $model->generateAuthKey();
         if($model->save()){
-          $model->assignsent();
+          $model->assignment();
         }
         return $this->redirect(['view', 'id' => $model->id]);
     } else {
@@ -2301,6 +2334,18 @@ public function behaviors(){
 - ทดสอบเข้าใช้งาน
 
 แนะนำให้สร้างโปรเจคใหม่และค่อยทำตามที่ละ step จะเข้าใจและมองภาพออก หากติดปัญหาก็ฝากคำถามไว้ที่ comment ได้ครับ หรือจะไปที่ fanpage Yii2learning ก็ได้ครับ
+
+
+ที่มา
+
+- [https://www.youtube.com/watch?v=7-jo8LKCnUk](https://www.youtube.com/watch?v=7-jo8LKCnUk)
+- [http://www.yiiframework.com/doc-2.0/guide-security-authorization.html](http://www.yiiframework.com/doc-2.0/guide-security-authorization.html)
+- [http://www.satusoftware.com/frontend/web/site/post/7/Yii2-RBAC-Examples-Simple-Tutorial-with-User-Admin](http://www.satusoftware.com/frontend/web/site/post/7/Yii2-RBAC-Examples-Simple-Tutorial-with-User-Admin)
+
+
+Thanks
+
+- อ. [Prawee Wongsa](https://www.facebook.com/prawee/about)
 
 [Download SourceCode](https://github.com/dixonsatit/yii2-workshop-rbac-db)
 @dixonsatit

@@ -550,3 +550,6 @@ public function actionDownload($id,$file,$file_name){
 ![view-upload](/img/upload-file/view-upload3.png)
 
 จากตัวอย่างเราจะเห็นว่าเราสามารถเก็บข้อมูลการอัพโหลดไฟล์ในรูปแบบ json ได้ซึ่งทำให้เราไม่ต้องสร้างฟิวด์หลายๆ ฟิวด์
+
+
+ดาวโหลดโค้ด[ได้ที่นี่](https://github.com/dimpled/Yii2-Learning-Source)
