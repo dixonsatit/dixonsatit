@@ -34,6 +34,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 
 
 ## CRUD
+- [การซ่อนแสดง Input ตามเงื่อนไข](/2015/09/09/hide-show-input.html)
 - [การใช้งาน DetailView](/2015/07/24/detail-view.html)
 - [การเตรียมข้อมูล Array เพื่อใช้กับ DropdownList,RadioList,CheckBoxList](/2015/07/21/item-alias.html)
 - [การใช้งาน CheckBoxList และการบันทึกข้อมูล](/2015/07/25/checkbox-list.html)

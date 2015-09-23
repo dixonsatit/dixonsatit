@@ -35,7 +35,7 @@ Application Template
 
 Collection of Extensions
 ----
-- [2amigos](http://2amigos.us/)
+- [2amigos](http://yiiwheels.com/)
 - [krajee](http://demos.krajee.com/)
 
 RESTful Web Service
