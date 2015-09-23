@@ -40,7 +40,6 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [การใช้งาน CheckBoxList และการบันทึกข้อมูล](/2015/07/25/checkbox-list.html)
 - [การปรับแต่ง layout Form](/2014/11/30/create-form.html)
 - การใช้งาน DropdownList
-- การอัพโหลดไฟล์
 - การใช้งาน Boostrap ActiveForm
 - [เปิดใช้งาน Ajax From Validateion](/2015/06/22/ajax-form-validation.html)
 - การสร้าง Template สำหรับ gii ไว้ใช้เอง
@@ -69,6 +68,12 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - สร้าง Toggle Button Ajax
 - สร้างฟอร์มค้นหา Ajax
 
+## Upload
+
+- [หลักการสร้างฟอร์มอัพโหลดอย่างง่ายและวิธีการใช้งาน](/2015/09/22/basic-upload.html)
+- [สร้างฟอร์ม Upload Files ด้วย AJAX](/2014/11/30/upload-ajax.html)
+- [สร้างฟอร์ม Upload File และเก็บข้อมูลเป็น json](/2014/11/30/upload-json.html)
+
 ## Tutorial
 - [การใช้งาน Data Formatte เพื่อแปลงวันที่, เวลา](/2015/06/23/date-formatter.html)
 - [เปลี่ยน ActionColumn เดิมๆ เป็นสไตล์ ButtonGroup](/2014/11/30/action-column.html)
@@ -76,8 +81,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [เปิดการใช้งาน Pretty urls (mod_rewrite)](/2014/11/30/modrewrite.html)
 - [สร้างลิ้งเชื่อมกันระหว่าง frontend & backend](/2014/11/30/links-backend-to-frontend.html)
 - [ การส่งเมล์ โดยใช้  yii2-swiftmailer  ด้วย smtp-google & smtp-mandrill](/2015/06/22/mailer-smtp-google-smtp-mandrill.html)
-- [สร้างฟอร์ม Upload Files ด้วย AJAX](/2014/11/30/upload-ajax.html)
-- [สร้างฟอร์ม Upload File และเก็บข้อมูลเป็น json](/2014/11/30/upload-json.html)
+
 
 ## Themeing
 - [การเปลี่ยนหน้า Default Error ให้สวยงาม](/2015/08/13/change-default-error-page.html)

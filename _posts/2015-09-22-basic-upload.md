@@ -115,6 +115,8 @@ public function getPhotoViewer(){
 }
 ```
 
+> สร้างโฟลเดอร์ uploads ที่ `web/uploads` เพื่อเอาไว้เก็บไฟล์ที่อัพโหลดขึ้นไป
+
 ### ลำดับการทำงานของฟังก์ชัน upload()
 
 - เรียกข้อมูลรูปภาพที่แนบมากับฟอร์มโดยใช้  `UploadedFile::getInstance()`
