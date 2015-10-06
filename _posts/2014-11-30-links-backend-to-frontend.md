@@ -1,6 +1,6 @@
 ---
 layout: post
-title: สร้างลิ้งเชื่อมกันระหว่าง frontend & backend
+title: การใช้ UrlManager สร้างลิ้งเชื่อมกันระหว่าง frontend & backend
 ---
 
 ในกรณที่เราสร้าง aplication แบบ advance ตัวโปรเจคจะถูกแบ่งออกเป็น 2 ส่วนคือ backend, frontend ซึ่งเราสามารถสร้าง link เชื่อมกันระหว่าง backend & frontend โดยใช้ `urlManager`

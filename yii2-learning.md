@@ -10,6 +10,12 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 
 โค้ดบางส่วนจะอยู่ที่นี่ครับ [ดาวน์โหลด](https://github.com/dimpled/Yii2-Learning-Source/) หรือดูตาม link ท้ายบทความได้ครับ
 
+## DevOps Tools
+
+- Virtual Box
+- Vagrant
+- Docker
+
 ## Tip & Trick
 - [รวม tip & trick ในการใช้งาน yii2 ที่สั้นๆ ผมจะรวบรวมไว้ที่นี่](/2015/08/14/yii2-tip-and-trick.html)
 
@@ -44,7 +50,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - การใช้งาน Boostrap ActiveForm
 - [เปิดใช้งาน Ajax From Validateion](/2015/06/22/ajax-form-validation.html)
 - การสร้าง Template สำหรับ gii ไว้ใช้เอง
-- [การใช้งาน Dropdown เพื่อสร้างตัวเลือก จังหวัด, อำเภอ, ตำบล](/2014/11/30/dependent-dropdown.html)
+- [การใช้งาน Dependent Dropdown เพื่อสร้างตัวเลือก จังหวัด, อำเภอ, ตำบล](/2014/11/30/dependent-dropdown.html)
 
 ## GridView
 - [การใช้งาน GridView และการปรับแต่ง Columns](/2015/07/06/gridview.html)
@@ -80,7 +86,7 @@ Yii Framework เป็น framework php ที่เรียกได้ว่
 - [เปลี่ยน ActionColumn เดิมๆ เป็นสไตล์ ButtonGroup](/2014/11/30/action-column.html)
 - สร้างระบบ login อย่างง่าย
 - [เปิดการใช้งาน Pretty urls (mod_rewrite)](/2014/11/30/modrewrite.html)
-- [สร้างลิ้งเชื่อมกันระหว่าง frontend & backend](/2014/11/30/links-backend-to-frontend.html)
+- [การใช้ UrlManager สร้างลิ้งเชื่อมกันระหว่าง frontend & backend](/2014/11/30/links-backend-to-frontend.html)
 - [ การส่งเมล์ โดยใช้  yii2-swiftmailer  ด้วย smtp-google & smtp-mandrill](/2015/06/22/mailer-smtp-google-smtp-mandrill.html)
 
 
