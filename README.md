@@ -1,5 +1,5 @@
-This is the data for my personal website
+Hello I'm Sathit I Like Code.
 ========================================
 
-It is automatically transformed by Jekyll into a static site whenever I push this repository to GitHub.
+
 
