@@ -1,4 +1,4 @@
-Hello I'm Sathit I Like Code.
+Hello i'm Sathit i love coding.
 ========================================
 
 
