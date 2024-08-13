@@ -1,5 +1,5 @@
-Hello i'm Sathit i love coding.
-========================================
+💻 Coding is Life
+
 
 
 
