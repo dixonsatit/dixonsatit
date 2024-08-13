@@ -20,6 +20,8 @@ Backend Development:
 	•	Testing (Unit, Integration, API)
 	•	Security (Data Encryption, Input Validation)
 	•	MQTT, Web
+ 	•	PHP
+	•	Python
 
 DevOps & Infrastructure:
 
