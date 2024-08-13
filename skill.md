@@ -22,6 +22,7 @@ Backend Development:
 	•	MQTT, Web
  	•	PHP
 	•	Python
+ 	•	Go
 
 DevOps & Infrastructure:
 
